@@ -4,22 +4,6 @@ window.jQuery = $
 import getDomain from '../controllers/getDomain'
 
 export default {
-  upload (perData) {
-    let tempURL = getDomain.getApi('v1/common/uploadPicture')
-    // 上传图片专用
-    return $.ajax({
-      url: tempURL,
-      traditional: true,
-      type: 'post',
-      dataType: 'json',
-      contentType: false,
-      processData: false,
-      data: perData,
-      xhrFields: {
-        withCredentials: true
-      }
-    })
-  },
   post (perData, perUrl, code, asy) {
     let Url = ''
     if (code != undefined) {
