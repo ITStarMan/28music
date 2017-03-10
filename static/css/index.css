@@ -26,3 +26,63 @@
 	border-bottom : 4px solid #b4a078;
 	color: #b4a078;
 }
+/*轮播图*/
+.banner_box{
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+  margin-top: 20px;
+}
+.banner_box .banner_ul li{
+  position: absolute;
+  float: left;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  display: none;
+}
+.banner_box .banner_ul li:first-child{
+  display: block;
+}
+.banner_btn{
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	bottom: 10px;
+}
+.banner_btn li{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background: #fff;
+	margin: 0 20px;
+	border: 1px solid #cecece;
+	cursor: pointer;
+}
+.banner_btn li.active{
+	background: #a7936e;
+}
+.banner_left,.banner_right{
+	position: absolute;
+	top: 200px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 50px;
+	background: #D0C4AF;
+	border: none;
+	color: #fff;
+	opacity: .6;
+	cursor: pointer;
+}
+.banner_left:hover,.banner_right:hover{
+	opacity: 1;
+}
+.banner_left{
+	left: 10px;
+}
+.banner_right{
+	right: 10px;
+}
