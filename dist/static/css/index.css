@@ -86,3 +86,6 @@
 .banner_right{
 	right: 10px;
 }
+.banner_left>img,.banner_right>img{
+	width: 20px;
+}
