@@ -6,7 +6,7 @@
       <a href="">查看更多 ></a>
     </div>
     <div class="big_img">
-      <img src="{{item.bigPic}}">
+      <img v-bind:src="item.bigPic" >
     </div>
     <div class="small_img clx">
       <ul>
