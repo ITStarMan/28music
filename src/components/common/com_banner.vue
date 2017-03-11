@@ -15,8 +15,8 @@
       <li></li>
     </ul>
     <div class="inner">
-      <button type="button" class="banner_left"> < </button>
-      <button type="button" class="banner_right"> > </button>
+      <button type="button" class="banner_left"><img src="../../images/banner_left.png"></button>
+      <button type="button" class="banner_right"><img src="../../images/banner_right.png"></button>
     </div>   
   </div>
 </template>
