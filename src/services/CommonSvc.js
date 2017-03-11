@@ -52,7 +52,7 @@ export default {
     return $.ajax({
       url: perUrl,
       type: 'get',
-      dataType: 'jsonp',
+      dataType: 'json',
       data: perData,
       async: Async
     })
