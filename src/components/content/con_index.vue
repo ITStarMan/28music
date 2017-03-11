@@ -1,7 +1,4 @@
 <template>
-	<div>
-		<h1>HELLO</h1>
-	</div>
 </template>
 <script>
 export default{
@@ -16,7 +13,4 @@ export default{
 }
 </script>
 <style>
-h1{
-  height: 1000px;
-}
 </style>
