@@ -51,14 +51,25 @@
   </div>
 </template>
 <script>
+import commonsvc from '../../services/CommonSvc'
+
 export default{
   data () {
     return {
     }
   },
   ready: function () {
+    this.getList()
   },
   methods: {
+    getList () {
+      let perUrl = 'http://www.28dagang.com/api/getIndexList.php'
+      let perData = {}
+      commonsvc.get(perData, perUrl).done(function(result){
+        alert(1)
+          console.log(result)
+      })
+    }
   }
 }
 </script>

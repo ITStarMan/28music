@@ -35,26 +35,7 @@ export default {
       }
     })
   },
-  get (perData, perUrl, code, async) {
-    let Url = ''
-    if (code != undefined) {
-      switch (code) {
-        case 1:
-          Url = getDomain.getApi(perUrl)
-          break
-        case 2:
-          Url = getDomain.getPassport(perUrl)
-          break
-        case 3:
-          Url = getDomain.getSDKdownload(perUrl)
-          break
-        default:
-
-      }
-    } else {
-      Url = perUrl
-    }
-
+  get (perData, perUrl, async) {
     let Async = true
     if (async != undefined) {
       switch (async) {
@@ -69,71 +50,11 @@ export default {
       }
     }
     return $.ajax({
-      url: Url,
-      traditional: true,
+      url: perUrl,
       type: 'get',
-      dataType: 'json',
+      dataType: 'jsonp',
       data: perData,
-      async: Async,
-      xhrFields: {
-        withCredentials: true
-      }
-    })
-  },
-  put (perData, perUrl, code) {
-    let Url = ''
-    if (code != undefined) {
-      switch (code) {
-        case 1:
-          Url = getDomain.getApi(perUrl)
-          break
-        case 2:
-          Url = getDomain.getPassport(perUrl)
-          break
-        default:
-
-      }
-    } else {
-      Url = perUrl
-    }
-    return $.ajax({
-      url: Url,
-      traditional: true,
-      type: 'put',
-      dataType: 'json',
-      data: perData,
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true
-    })
-  },
-  det (perData, perUrl, code) {
-    let Url = ''
-    if (code != undefined) {
-      switch (code) {
-        case 1:
-          Url = getDomain.getApi(perUrl)
-          break
-        case 2:
-          Url = Url = getDomain.getPassport(perUrl)
-          break
-        default:
-
-      }
-    } else {
-      Url = perUrl
-    }
-    return $.ajax({
-      url: Url,
-      traditional: true,
-      type: 'delete',
-      dataType: 'json',
-      data: perData,
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true
+      async: Async
     })
   }
 }
