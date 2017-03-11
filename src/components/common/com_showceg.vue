@@ -12,7 +12,7 @@
       <ul>
         <li>
           <div class="item_top">
-            <a href=""><img src="{{item.smallOne}}"></a>
+            <a href=""><img v-bind:src="item.smallOne"></a>
           </div>
           <div class="item_bottom">
             <p class="item_name">{{item.smallOneName}}</p>
@@ -21,7 +21,7 @@
         </li>
         <li>
           <div class="item_top">
-            <a href=""><img src="{{item.smallTwo}}"></a>
+            <a href=""><img v-bind:src="item.smallTwo"></a>
           </div>
           <div class="item_bottom">
             <p class="item_name">{{item.smallTwoName}}</p>
@@ -30,7 +30,7 @@
         </li>
         <li>
           <div class="item_top">
-            <a href=""><img src="{{item.smallThree}}"></a>
+            <a href=""><img v-bind:src="item.smallThree"></a>
           </div>
           <div class="item_bottom">
             <p class="item_name">{{item.smallThreeName}}</p>
@@ -39,7 +39,7 @@
         </li>
         <li>
           <div class="item_top">
-            <a href=""><img src="{{item.smallFour}}"></a>
+            <a href=""><img v-bind:src="item.smallFour"></a>
           </div>
           <div class="item_bottom">
             <p class="item_name">{{item.smallFourName}}</p>
