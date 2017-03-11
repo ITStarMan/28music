@@ -1,49 +1,49 @@
 <template>
-  <div class="banner_list inner">
+  <div class="banner_list inner" v-for="item in list">
     <div class="list_top clx">
-      <h3>居家</h3>
-      <small>回家，放松身心</small>
+      <h3>{{item.cegName}}</h3>
+      <small>{{item.cegDesc}}</small>
       <a href="">查看更多 ></a>
     </div>
     <div class="big_img">
-      <img src="../../images/show_1.jpg">
+      <img src="{{item.bigPic}}">
     </div>
     <div class="small_img clx">
       <ul>
         <li>
           <div class="item_top">
-            <a href=""><img src="../../images/show_1_1.png"></a>
+            <a href=""><img src="{{item.smallOne}}"></a>
           </div>
           <div class="item_bottom">
-            <p class="item_name">日式记忆绵坐垫</p>
-            <p class="item_price">￥59</p>
+            <p class="item_name">{{item.smallOneName}}</p>
+            <p class="item_price">￥{{item.smallOnePrice}}</p>
           </div>
         </li>
         <li>
           <div class="item_top">
-            <a href=""><img src="../../images/show_1_2.png"></a>
+            <a href=""><img src="{{item.smallTwo}}"></a>
           </div>
           <div class="item_bottom">
-            <p class="item_name">可水洗舒柔丝羽绒枕</p>
-            <p class="item_price">￥59</p>
+            <p class="item_name">{{item.smallTwoName}}</p>
+            <p class="item_price">￥{{item.smallTwoPrice}}</p>
           </div>
         </li>
         <li>
           <div class="item_top">
-            <a href=""><img src="../../images/show_1_3.png"></a>
+            <a href=""><img src="{{item.smallThree}}"></a>
           </div>
           <div class="item_bottom">
-            <p class="item_name">安睡慢回弹记忆绵床垫</p>
-            <p class="item_price">￥599</p>
+            <p class="item_name">{{item.smallThreeName}}</p>
+            <p class="item_price">￥{{item.smallThreePrice}}</p>
           </div>
         </li>
         <li>
           <div class="item_top">
-            <a href=""><img src="../../images/show_1_4.png"></a>
+            <a href=""><img src="{{item.smallFour}}"></a>
           </div>
           <div class="item_bottom">
-            <p class="item_name">全棉贡缎纯色床单</p>
-            <p class="item_price">￥99</p>
+            <p class="item_name">{{item.smallFourName}}</p>
+            <p class="item_price">￥{{item.smallFourPrice}}</p>
           </div>
         </li>
       </ul>
@@ -56,6 +56,7 @@ import commonsvc from '../../services/CommonSvc'
 export default{
   data () {
     return {
+      list: []
     }
   },
   ready: function () {
@@ -65,9 +66,10 @@ export default{
     getList () {
       let perUrl = 'http://www.28dagang.com/api/getIndexList.php'
       let perData = {}
+      let _this = this
       commonsvc.get(perData, perUrl).done(function(result){
-        alert(1)
-          console.log(result)
+        console.log(result)
+        _this.list = result
       })
     }
   }

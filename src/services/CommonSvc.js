@@ -46,7 +46,6 @@ export default {
           Async = false
           break
         default:
-
       }
     }
     return $.ajax({
