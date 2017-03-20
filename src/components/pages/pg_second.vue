@@ -1,8 +1,16 @@
 <template>
   <com-header></com-header>
+  <com-banner></com-banner>
+  <div class="wrapper">
+  	<con-index></con-index>
+  </div>
+
 </template>
 <script>
+import index from '../content/con_index'
 import header from '../common/com_header'
+import banner from '../common/com_banner'
+
 
 export default{
   data () {
@@ -14,7 +22,9 @@ export default{
   methods: {
   },
   components: {
-    'com-header': header
+    'con-index': index,
+    'com-header': header,
+    'com-banner': banner
   }
 }
 </script>
