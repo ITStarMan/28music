@@ -5,6 +5,10 @@
     <con-index></con-index>
   </div>
 <com-navva></com-navva>
+  	<con-index></con-index>
+  </div>
+  <com-show></com-show>
+
 </template>
 <script>
 import index from '../content/con_index'
@@ -25,6 +29,7 @@ export default{
     'com-header': header,
     'com-banner': banner,
     'com-navva': navva
+ 
   }
 }
 </script>
