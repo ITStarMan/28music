@@ -1,24 +1,25 @@
 <template>
-  <div class="fenlei"> 
-    <span class="select">分类：</span>
-    <a href=""><span  class="select">全部</span></a>
-    <a href="">被枕</a>
-    <a href="">床品套件</a>
-    <a href="">床垫</a>
-    <a href="">地垫</a>
-    <a href="">家具</a>
-    <a href="">舒坐</a>
-    <a href="">灯具</a>
-    <a href="">家饰</a>
-    <div class="fenlei-rg">
-       <span class="select">默认</span>
-       <a href="">价格</a>
-       <div class="sanjiao"></div>
-       <a href="">上架时间</a>
-       <div class="jiantou"></div>
+ <div class="fenzong"> 
+    <div class="fenlei"> 
+      <span class="select">分类：</span>
+      <a href=""><span  class="select">全部</span></a>
+      <a href="">被枕</a>
+      <a href="">床品套件</a>
+      <a href="">床垫</a>
+      <a href="">地垫</a>
+      <a href="">家具</a>
+      <a href="">舒坐</a>
+      <a href="">灯具</a>
+      <a href="">家饰</a>
+      <div class="fenlei-rg">
+         <span class="select">默认</span>
+         <a href="">价格</a>
+         <div class="sanjiao"></div>
+         <a href="">上架时间</a>
+         <div class="jiantou"></div>
+      </div>
     </div>
 </div>
-
 </template>
 <script>
 export default{
@@ -33,28 +34,7 @@ export default{
 }
 </script>
 <style scoped>
-#app{background:#eeeeee;}
-.banner_box{    position: relative;
-                overflow: hidden;
-                width: 1090px;
-                height: 312px;
-                margin-top: 20px;
-                margin: 0 auto;
-                background:#ffffff;
-                }
-.banner_left, .banner_right {
-                    position: absolute;
-                    width:1090px;
-                    top: 126px;
-                    width: 50px;
-                    height: 80px;
-                    line-height: 80px;
-                    border-radius: 50px;
-                    background: #D0C4AF;
-                    border: none;
-                    color: #fff;
-                    opacity: 0.6;
-                    cursor: pointer;}
+.fenzong{height:8-px;background:#eeeeee;}
 .fenlei{width:1090px;height:80px; margin:0 auto;border-bottom:1px solid #eeeeee;background:#ffffff;}
 .fenlei span{line-height:80px;}
 .fenlei a{padding-left:30px;}
