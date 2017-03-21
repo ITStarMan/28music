@@ -5,10 +5,6 @@
     <con-index></con-index>
   </div>
 <com-navva></com-navva>
-  	<con-index></con-index>
-  </div>
-  <com-show></com-show>
-
 </template>
 <script>
 import index from '../content/con_index'
@@ -29,8 +25,7 @@ export default{
     'com-header': header,
     'com-banner': banner,
     'com-navva': navva
- 
-  }
+  },
 }
 </script>
 <style>
@@ -48,12 +43,12 @@ export default{
                     width:1090px;
                     top: 126px;
                     width: 50px;
-                    height: 50px;
-                    line-height: 50px;
+                    height: 80px;
+                    line-height: 80px;
                     border-radius: 50px;
                     background: #D0C4AF;
                     border: none;
                     color: #fff;
-                    opacity: .6;
+                    opacity: 0.6;
                     cursor: pointer;}
 </style>
