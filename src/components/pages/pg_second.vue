@@ -107,9 +107,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-             <div class="silie">
-                <div class="contn">
+
+                 <div class="contn">
                     <div class="contn-nei">
                         <a href=""><img src="../../images/bei_1.png" alt=""></a>
                         <div class="w-name">
@@ -199,9 +198,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="silie">
-                <div class="contn">
+                 <div class="contn">
                     <div class="contn-nei">
                         <a href=""><img src="../../images/bei_1.png" alt=""></a>
                         <div class="w-name">
@@ -291,11 +288,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>
         </div>
-    </div>
-    <div class="liebiao">
-          <div class="xifen">
+
+         <div class="xifen xf-tow">
             <div class="xiaobiaoti">
                 <img src="../../images/zht.png" alt="">
                 <h1>
@@ -396,9 +392,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-             <div class="silie">
-                <div class="contn">
+
+                 <div class="contn">
                     <div class="contn-nei">
                         <a href=""><img src="../../images/bei_1.png" alt=""></a>
                         <div class="w-name">
@@ -488,9 +483,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="silie">
-                <div class="contn">
+                 <div class="contn">
                     <div class="contn-nei">
                         <a href=""><img src="../../images/bei_1.png" alt=""></a>
                         <div class="w-name">
@@ -580,9 +573,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-           </div>
+             </div>
+        </div>
     </div>
+   
 </template>
 <script>
 import index from '../content/con_index'
@@ -607,8 +601,9 @@ export default{
 }
 </script>
 <style scoped>
-        .liebiao{height: 1400px;background:#eeeeee;}
-        .xifen{width: 1090px;height: 1200px;margin: 0 auto;background:#ffffff;}
+        .liebiao{height: auto;background:#eeeeee;}
+        .xifen{width: 1090px;height: 1350px;margin: 0 auto;background:#ffffff;}
+        .xf-tow{width: 1090px;height: 1350px;margin: 0 auto;background:#ffffff;}
         .xiaobiaoti{width: 200px;height: 50px;margin: 0 auto;background:#ffffff;}
         .xiaobiaoti img{width:70px;height:50px;display:inline-block;margin-top: -21px;
     margin-left: 20px;}
