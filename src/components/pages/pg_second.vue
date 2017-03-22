@@ -611,7 +611,7 @@ export default{
         .xifen{width: 1090px;height: 1200px;margin: 0 auto;background:#ffffff;}
         .xiaobiaoti{width: 200px;height: 50px;margin: 0 auto;background:#ffffff;}
         .xiaobiaoti h1{line-height: 50px;font-size: 36px;text-align: center;display:inline-block;}
-        .xiaobiaoti img{display:inline-block;width:70px;height:50px;margin-top: -18px;margin-left:20px;}
+        .xiaobiaoti>a>img{display:inline-block;width:70px;height:50px;margin-top: -18px;margin-left:20px;}
         .xiaobiaoti p{text-align:center;colco:#eeeeee;display:block;width:200px;height:50px;line-height:50px;marign-bottom:30px;}
         .silie{width:1090px;height:450px;background:#ffffff;}
         .contn{width:250px;height:390px;float:left;margin-left:18px;margin-top: 40px;}
