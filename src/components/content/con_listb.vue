@@ -76,7 +76,7 @@ export default{
 <style scoped>
         .liebiao{height: auto;background:#eeeeee;}
         .xifen{width: 1090px;margin: 0 auto;background:#ffffff;}
-        .xiaobiaoti{width: 200px;height: 75px; margin: 14px auto;background: #ffffff;}
+        .xiaobiaoti{width: 200px;height: 88px;margin: 0px auto;padding-top: 16px;background: #ffffff;}
         .xiaobiaoti img{width:70px;height:50px;display:inline-block;margin-top: -21px;
     margin-left: 20px;}
         .xiaobiaoti h1{line-height: 50px;font-size: 36px;text-align: center;display:inline-block;}
