@@ -11,7 +11,7 @@ export default{
     }
     // 正式环境
     if (test == -1 && sit == -1 && prod != -1) {
-      url = 'http://www.28dagang.com/' + perUrl
+      url = 'http://www.28dagang.com/#/' + perUrl
     }
     return url
   }
