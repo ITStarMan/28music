@@ -34,7 +34,7 @@ export default{
         type:'GET',
         success:function(data){
           console.log(data)
-          _this.labellist = data
+          _this.labellist = data.label
         }
       })
     }

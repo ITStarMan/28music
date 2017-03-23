@@ -29,5 +29,9 @@ for($x=0;$x<$arrlen;$x++) {
 	}
 	$bb[$x]["goodsList"] = $dd;
 }
-echo json_encode($bb);
+$ee=array();
+$ee['cegID'] = $cc[0]["CegID"];
+$ee['cegName'] = $cc[0]["CegName"];
+$ee['label'] = $bb;
+echo json_encode($ee);
 ?>
