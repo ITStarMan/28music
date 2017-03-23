@@ -1,16 +1,9 @@
 <template>
  <div class="fenzong"> 
-    <div class="fenlei"> 
+    <div class="fenlei" > 
       <span class="select">分类：</span>
       <a href=""><span  class="select">全部</span></a>
-      <a href="">被枕</a>
-      <a href="">床品套件</a>
-      <a href="">床垫</a>
-      <a href="">地垫</a>
-      <a href="">家具</a>
-      <a href="">舒坐</a>
-      <a href="">灯具</a>
-      <a href="">家饰</a>
+      <a href="" v-for="item in labellist">{{item.labelName}}</a>
       <div class="fenlei-rg">
          <span class="select">默认</span>
          <a href="">价格</a>
@@ -29,6 +22,7 @@ export default{
     }
   },
   ready: function () {
+  	this.getListSecond()
   },
   methods: {
     getListSecond () {
