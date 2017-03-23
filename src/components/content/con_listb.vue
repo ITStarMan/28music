@@ -283,10 +283,10 @@
                     </div>
                 </div>
              </div>
-        </div>
+     </div>
 
-         <div class="xifen xf-tow">
-            <div class="xiaobiaoti">
+      <div class="xifen xf-tow">
+          <div class="xiaobiaoti">
                 <img src="../../images/zht.png" alt="">
                 <h1>
                     被枕
@@ -578,10 +578,25 @@ export default{
     }
   },
   ready: function () {
+            this.getListSecond()
   },
   methods: {
+          getListSecond () {
+          $.ajax({
+                  url:'http://www.28dagang.com/api/getAllGoods.php',
+                  data:{ },
+                  dataType:'JSON',
+                  type:'GET',
+                  success:function(data){
+                       console.log(data)
+                       _this.data = data
         
-  }
+                  },
+
+
+          })
+         }
+      }
 }
 </script>
 <style scoped>
