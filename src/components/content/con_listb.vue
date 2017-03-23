@@ -590,6 +590,26 @@ export default{
                   success:function(data){
                        console.log(data)
                        _this.data = data
+                       for(var i=0;i<data.length;i++){
+                       var h=document.creatElement("h1");
+                       var p1=document.creatElement("p");
+                       var a1=document.creatElement("a");
+                       var p2=document.creatElement("p");
+                       var p3=document.creatElement("p");
+                        
+                        div1.appendChild(h);
+                        div1.appendChild(p1);
+                        div3.appendChild(a1);
+                        div4.appendChild(p2);
+                        div5.appendChild(p3);
+
+                        div1.className="xiaobiaoti";
+                        div1.className="xiaobiaoti";
+                        div3.className="w-name";
+                        div4.className="w-price";
+                        div5.className="w-intur";
+
+                       }
         
                   },
 
