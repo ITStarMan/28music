@@ -1,582 +1,390 @@
-<template>
-  <com-header></com-header>
-  <com-banner></com-banner>
-  <div class="wrapper">
-    <con-index></con-index>
-  </div>
-  <com-navva></com-navva>
-    <div class="liebiao">
-        <div class="xifen">
-            <div class="xiaobiaoti">
-                <img src="../../images/zht.png" alt="">
-                <h1>
-                    被枕
-                </h1>
-                <p>
-                    守护你的睡眠时光
-                </p>
-            </div>
-            <div class="silie">
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_1.png" alt=""></a>
-                        <div class="w-name">
-                            <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                449.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天然桑蚕丝，吸湿透气柔软
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_2.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧纱布亲肤手工蚕丝被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1599.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                手工匠心织造
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_3.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧桑蚕丝被 子母被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1399.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                子母被设计，四季皆可使用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_4.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">纯棉水洗色织格夏凉被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                169.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天100%棉填充，透气排汗，双面可用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_1.png" alt=""></a>
-                        <div class="w-name">
-                            <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                449.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天然桑蚕丝，吸湿透气柔软
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_2.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧纱布亲肤手工蚕丝被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1599.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                手工匠心织造
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_3.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧桑蚕丝被 子母被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1399.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                子母被设计，四季皆可使用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_4.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">纯棉水洗色织格夏凉被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                169.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天100%棉填充，透气排汗，双面可用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_1.png" alt=""></a>
-                        <div class="w-name">
-                            <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                449.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天然桑蚕丝，吸湿透气柔软
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_2.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧纱布亲肤手工蚕丝被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1599.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                手工匠心织造
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_3.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧桑蚕丝被 子母被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1399.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                子母被设计，四季皆可使用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_4.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">纯棉水洗色织格夏凉被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                169.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天100%棉填充，透气排汗，双面可用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-        </div>
-
-         <div class="xifen xf-tow">
-            <div class="xiaobiaoti">
-                <img src="../../images/zht.png" alt="">
-                <h1>
-                    被枕
-                </h1>
-                <p>
-                    守护你的睡眠时光
-                </p>
-            </div>
-            <div class="silie">
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_1.png" alt=""></a>
-                        <div class="w-name">
-                            <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                449.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天然桑蚕丝，吸湿透气柔软
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_2.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧纱布亲肤手工蚕丝被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1599.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                手工匠心织造
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_3.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧桑蚕丝被 子母被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1399.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                子母被设计，四季皆可使用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_4.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">纯棉水洗色织格夏凉被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                169.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天100%棉填充，透气排汗，双面可用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_1.png" alt=""></a>
-                        <div class="w-name">
-                            <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                449.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天然桑蚕丝，吸湿透气柔软
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_2.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧纱布亲肤手工蚕丝被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1599.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                手工匠心织造
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_3.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧桑蚕丝被 子母被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1399.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                子母被设计，四季皆可使用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_4.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">纯棉水洗色织格夏凉被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                169.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天100%棉填充，透气排汗，双面可用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_1.png" alt=""></a>
-                        <div class="w-name">
-                            <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                449.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天然桑蚕丝，吸湿透气柔软
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_2.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧纱布亲肤手工蚕丝被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1599.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                手工匠心织造
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_3.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">双宫茧桑蚕丝被 子母被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                1399.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                子母被设计，四季皆可使用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contn">
-                    <div class="contn-nei">
-                        <a href=""><img src="../../images/bei_4.png" alt=""></a>
-                        <div class="w-name">
-                            <h3>
-                                <a href="">纯棉水洗色织格夏凉被</a>
-                            </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                169.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                天100%棉填充，透气排汗，双面可用
-                            </p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-        </div>
-    </div>  
-</template>
+  <template> 
+   <com-header></com-header> 
+   <com-banner></com-banner> 
+   <div class="wrapper"> 
+    <con-index></con-index> 
+   </div> 
+   <com-navva></com-navva> 
+   <div class="liebiao"> 
+    <div class="xifen"> 
+     <div class="xiaobiaoti"> 
+      <img src="../../images/zht.png" alt="" /> 
+      <h1> 被枕 </h1> 
+      <p> 守护你的睡眠时光 </p> 
+     </div> 
+     <div class="silie"> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_1.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 449.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天然桑蚕丝，吸湿透气柔软 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_2.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧纱布亲肤手工蚕丝被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1599.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 手工匠心织造 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_3.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧桑蚕丝被 子母被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1399.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 子母被设计，四季皆可使用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_4.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">纯棉水洗色织格夏凉被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 169.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天100%棉填充，透气排汗，双面可用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_1.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 449.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天然桑蚕丝，吸湿透气柔软 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_2.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧纱布亲肤手工蚕丝被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1599.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 手工匠心织造 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_3.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧桑蚕丝被 子母被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1399.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 子母被设计，四季皆可使用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_4.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">纯棉水洗色织格夏凉被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 169.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天100%棉填充，透气排汗，双面可用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_1.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 449.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天然桑蚕丝，吸湿透气柔软 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_2.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧纱布亲肤手工蚕丝被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1599.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 手工匠心织造 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_3.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧桑蚕丝被 子母被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1399.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 子母被设计，四季皆可使用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_4.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">纯棉水洗色织格夏凉被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 169.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天100%棉填充，透气排汗，双面可用 </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="xifen xf-tow"> 
+     <div class="xiaobiaoti"> 
+      <img src="../../images/zht.png" alt="" /> 
+      <h1> 被枕 </h1> 
+      <p> 守护你的睡眠时光 </p> 
+     </div> 
+     <div class="silie"> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_1.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 449.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天然桑蚕丝，吸湿透气柔软 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_2.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧纱布亲肤手工蚕丝被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1599.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 手工匠心织造 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_3.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧桑蚕丝被 子母被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1399.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 子母被设计，四季皆可使用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_4.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">纯棉水洗色织格夏凉被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 169.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天100%棉填充，透气排汗，双面可用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_1.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 449.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天然桑蚕丝，吸湿透气柔软 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_2.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧纱布亲肤手工蚕丝被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1599.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 手工匠心织造 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_3.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧桑蚕丝被 子母被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1399.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 子母被设计，四季皆可使用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_4.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">纯棉水洗色织格夏凉被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 169.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天100%棉填充，透气排汗，双面可用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_1.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3><a href="">双宫茧桑蚕丝被 空调被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 449.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天然桑蚕丝，吸湿透气柔软 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_2.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧纱布亲肤手工蚕丝被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1599.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 手工匠心织造 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_3.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">双宫茧桑蚕丝被 子母被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 1399.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 子母被设计，四季皆可使用 </p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="contn"> 
+       <div class="contn-nei"> 
+        <a href=""><img src="../../images/bei_4.png" alt="" /></a> 
+        <div class="w-name"> 
+         <h3> <a href="">纯棉水洗色织格夏凉被</a> </h3> 
+        </div> 
+        <div class="w-price"> 
+         <span> ￥ </span> 
+         <p> 169.00 </p> 
+        </div> 
+        <div class="w-intur"> 
+         <p> 天100%棉填充，透气排汗，双面可用 </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+  </template>
 <script>
   import index from '../content/con_index'
   import header from '../common/com_header'
@@ -597,7 +405,7 @@ export default{
     'com-banner': banner,
     'com-navva': navva
   }
-</script>
+  </script>
 <style scoped>
         .liebiao{height: auto;background:#eeeeee;}
         .xifen{width: 1090px;height: 1350px;margin: 0 auto;background:#ffffff;}
