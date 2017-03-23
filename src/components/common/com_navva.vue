@@ -28,7 +28,7 @@ export default{
     getListSecond () {
       let _this = this
       $.ajax({
-        url:'http://www.28dagang.com/api/getAllGoods.php',
+        url:'http://www.28dagang.com/api/getAllGoods.php?CegID=' +  this.$route.params.CegID,
         data:{},
         dataType:'JSON',
         type:'GET',

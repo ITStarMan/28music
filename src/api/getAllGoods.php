@@ -2,8 +2,12 @@
 header("content-type:text/json;charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 include("mysql.php");
-$result =mysql_query("select * from goods");
-$data =mysql_query("select * from label");
+$id=$_GET['CegID'];
+if($id == null){
+	exit('缺少CegID');
+};
+$result =mysql_query("select * from goods where CegID='$id'");
+$data =mysql_query("select * from label where CegID='$id'");
 $aa=array();
 $cc=array();
 while($row = mysql_fetch_array($data)){

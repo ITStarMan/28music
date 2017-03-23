@@ -4,7 +4,7 @@ const routers = {
       require(['./components/pages/pg_index.vue'], resolve)
     }
   },
-  '/second': {
+  '/second/:CegID': {
     component (resolve) {
       require(['./components/pages/pg_second.vue'], resolve)
     }
