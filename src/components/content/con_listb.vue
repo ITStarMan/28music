@@ -63,20 +63,12 @@ export default{
                     console.log(data)
                     _this.labellist = data
                     console.log(_this.labellist)
-
                 }
-
             })
-               
-               
-                 
-
-
-          
          },
          toInfo (id) {
             alert(id)
-            window.location.href = 'www.baidu.com/' + id
+            window.location.href = '' + id
          }
       }
 }
@@ -84,11 +76,11 @@ export default{
 <style scoped>
         .liebiao{height: auto;background:#eeeeee;}
         .xifen{width: 1090px;margin: 0 auto;background:#ffffff;}
-        .xiaobiaoti{width: 200px;height: 50px;margin: 0 auto;background:#ffffff;}
+        .xiaobiaoti{width: 200px;height: 75px; margin: 14px auto;background: #ffffff;}
         .xiaobiaoti img{width:70px;height:50px;display:inline-block;margin-top: -21px;
     margin-left: 20px;}
         .xiaobiaoti h1{line-height: 50px;font-size: 36px;text-align: center;display:inline-block;}
-        .xiaobiaoti p{text-align:center;colco:#eeeeee;display:block;width:200px;height:150px;line-height:50px;marign-bottom:30px;}
+        .xiaobiaoti p{text-align:center;colco:#eeeeee;display:block;width:200px;line-height:50px;marign-bottom:30px;}
         .silie{width:1090px;height:450px;background:#ffffff;}
         .contn{width:250px;height:390px;float:left;margin-left:18px;margin-top: 40px;}
         .contn-nei{width:250px;height:250px;background:#eeeeee;}
