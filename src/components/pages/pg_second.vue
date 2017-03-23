@@ -2,14 +2,13 @@
 <com-header></com-header>
   <com-banner></com-banner>
   <div class="wrapper">
-    <con-index></con-index>
+    <com-navva></com-navva>
+  <con-listb></con-listb>
   </div>
-  <com-show></com-show>
- <con-listb></con-listb>
+  
    
 </template>
 <script>
-import index from '../content/con_index'
 import header from '../common/com_header'
 import banner from '../common/com_banner'
 import navva from '../common/com_navva'
@@ -25,7 +24,6 @@ export default{
 
   },
   components: {
-    'con-index': index,
     'com-header': header,
     'com-banner': banner,
     'com-navva': navva,
