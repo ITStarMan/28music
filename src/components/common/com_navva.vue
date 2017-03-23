@@ -25,11 +25,25 @@
 export default{
   data () {
     return {
+      labellist: []
     }
   },
   ready: function () {
   },
-   methods: {
+  methods: {
+    getListSecond () {
+      let _this = this
+      $.ajax({
+        url:'http://www.28dagang.com/api/getAllGoods.php',
+        data:{},
+        dataType:'JSON',
+        type:'GET',
+        success:function(data){
+          console.log(data)
+          _this.labellist = data
+        }
+      })
+    }
   }
 }
 </script>
