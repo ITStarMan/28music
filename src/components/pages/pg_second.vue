@@ -4,7 +4,7 @@
   <div class="wrapper">
     <con-index></con-index>
   </div>
-<com-navva></com-navva>
+  <com-navva></com-navva>
     <div class="liebiao">
         <div class="xifen">
             <div class="xiaobiaoti">
@@ -575,14 +575,13 @@
                 </div>
              </div>
         </div>
-    </div>
-   
+    </div>  
 </template>
 <script>
-import index from '../content/con_index'
-import header from '../common/com_header'
-import banner from '../common/com_banner'
-import navva from '../common/com_navva'
+  import index from '../content/con_index'
+  import header from '../common/com_header'
+  import banner from '../common/com_banner'
+  import navva from '../common/com_navva'
 export default{
   data () {
     return {
@@ -598,15 +597,13 @@ export default{
     'com-banner': banner,
     'com-navva': navva
   }
-}
 </script>
 <style scoped>
         .liebiao{height: auto;background:#eeeeee;}
         .xifen{width: 1090px;height: 1350px;margin: 0 auto;background:#ffffff;}
         .xf-tow{width: 1090px;height: 1350px;margin: 0 auto;background:#ffffff;}
         .xiaobiaoti{width: 200px;height: 50px;margin: 0 auto;background:#ffffff;}
-        .xiaobiaoti img{width:70px;height:50px;display:inline-block;margin-top: -21px;
-    margin-left: 20px;}
+        .xiaobiaoti img{width:70px;height:50px;display:inline-block;margin-top: -21px;margin-left: 20px;}
         .xiaobiaoti h1{line-height: 50px;font-size: 36px;text-align: center;display:inline-block;}
         .xiaobiaoti p{text-align:center;colco:#eeeeee;display:block;width:200px;height:150px;line-height:50px;marign-bottom:30px;}
         .silie{width:1090px;height:450px;background:#ffffff;}
