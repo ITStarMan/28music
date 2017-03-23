@@ -1,4 +1,10 @@
 <template>
+<com-header></com-header>
+  <com-banner></com-banner>
+  <div class="wrapper">
+    <con-index></con-index>
+  </div>
+  <com-show></com-show>
  <con-listb></con-listb>
    
 </template>
