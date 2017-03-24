@@ -1,8 +1,8 @@
 <template>
     <div class="liebiao">
-        <div class="xifen" v-for="item in labellist.label">
-            <div class="xiaobiaoti">
-                <img src="../../images/zht.png" alt="">
+        <div class="xifen" v-for="item in goods.result.label">
+            <div class="xiaobiaoti" >
+                <img v-bind:src="item.labelLogo" alt="">
                 <h1>
                     {{item.labelName}}
                 </h1>
@@ -13,7 +13,7 @@
             <div class="silie">
                 <div class="contn" v-for="li in item.goodsList">
                     <div class="contn-nei" v-on:click="toInfo(li.goodsID)">
-                        <a href="javascript: void(0)"><img src="../../images/bei_1.png" alt=""></a>
+                        <a href="javascript: void(0)"><img v-bind:src="li.goodsLogo" alt=""></a>
                         <div class="w-name">
                             <h3><a href="">{{li.goodsName}}</a> </h3>
                         </div>
@@ -37,13 +37,12 @@
     </div>
 </template>
 <script>
+import goods from '../../models/md_goodsList'
+
 export default{
   data () {
     return {
-     labellist: {
-        'cegName': '',
-        'label': []
-     }
+      goods
     }
     },
     ready: function () {
@@ -61,8 +60,7 @@ export default{
                 type:'GET',
                 success:function(data){
                     console.log(data)
-                    _this.labellist = data
-                    console.log(_this.labellist)
+                    _this.goods.result.label = data.label
                 }
             })
          },
@@ -70,15 +68,16 @@ export default{
             alert(id)
             window.location.href = '' + id
          }
-      }
+      },
+
 }
 </script>
 <style scoped>
         .liebiao{height: auto;background:#eeeeee;}
         .xifen{width: 1090px;margin: 0 auto;background:#ffffff;}
         .xiaobiaoti{width: 200px;height: 88px;margin: 0px auto;padding-top: 16px;background: #ffffff;}
-        .xiaobiaoti img{width:70px;height:50px;display:inline-block;margin-top: -21px;
-    margin-left: 20px;}
+        .xiaobiaoti img{width:50px;height:50px;display:inline-block;margin-top: -21px;
+    margin-left: 36px;}
         .xiaobiaoti h1{line-height: 50px;font-size: 36px;text-align: center;display:inline-block;}
         .xiaobiaoti p{text-align:center;colco:#eeeeee;display:block;width:200px;line-height:50px;marign-bottom:30px;}
         .silie{width:1090px;height:450px;background:#ffffff;}
