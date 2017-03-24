@@ -73,6 +73,8 @@ export default{
 }
 </script>
 <style scoped>
+        body{background:#eeeeee;}
+        app{background:#eeeeee;}
         .liebiao{height: auto;background:#eeeeee;}
         .xifen{width: 1090px;margin: 0 auto;background:#ffffff;}
         .xiaobiaoti{width: 200px;height: 88px;margin: 0px auto;padding-top: 16px;background: #ffffff;}
