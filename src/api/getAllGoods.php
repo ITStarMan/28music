@@ -6,8 +6,14 @@ $id=$_GET['CegID'];
 if($id == null){
 	exit('缺少CegID');
 };
-$result =mysql_query("select * from goods where CegID='$id'");
-$data =mysql_query("select * from label where CegID='$id'");
+$lid=$_GET['labelID'];
+if($lid == null){
+	$result =mysql_query("select * from goods where CegID='$id'");
+	$data =mysql_query("select * from label where CegID='$id'");
+}else{
+	$result =mysql_query("select * from goods where CegID='$id' and labelID='$lid'");
+	$data =mysql_query("select * from label where CegID='$id' and labelID='$lid'");
+};
 $aa=array();
 $cc=array();
 while($row = mysql_fetch_array($data)){
@@ -23,6 +29,7 @@ for($x=0;$x<$arrlen;$x++) {
 	$bb[$x]["labelID"] = $cc[$x]["labelID"];
 	$bb[$x]["labelName"] = $cc[$x]["labelName"];
 	$bb[$x]["labelDesc"] = $cc[$x]["labelDesc"];
+	$bb[$x]["labelLogo"] = $cc[$x]["labelLogo"];
 	$i=0;
 	$dd=array();
 	for($y=0;$y<$arrlength;$y++) {		
