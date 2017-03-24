@@ -22,7 +22,7 @@
                                 ￥
                             </span>
                             <p>
-                                {{li.goodsPrice}}
+                                {{li.goodsPrice}}.00
                             </p>
                         </div>
                         <div class="w-intur">
