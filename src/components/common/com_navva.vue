@@ -71,12 +71,12 @@ export default{
 </script>
 <style scoped>
 .fenzong{height:8-px;background:#eeeeee;}
-.fenlei{width:1090px;height:80px; margin:0 auto;border-bottom:1px solid #eeeeee;background:#ffffff;}
-.fenlei span{line-height:80px;}
+.fenlei{width:1090px;height:100px; margin:0 auto;border-bottom:1px solid #eeeeee;background:#ffffff;}
+.fenlei span{line-height:120px;}
 .fenlei a{padding-left:30px;}
 .fenlei a:hover{color:#b4a078;cursor:pointer;}
 .select{ color:#b4a078; padding-left:30px;}
-.fenlei-rg{width:290px;height:50px;float:right; margin-right:30px;line-height:80px;}
+.fenlei-rg{width:290px;height:50px;float:right; margin-right:30px;line-height:120px;}
  .sanjiao {display: inline-block;width:20px;height:20px;margin-left: 10px;background: url(../../images/sanjiao.png)no-repeat;}
 .jiantou{ display: inline-block; width:20px;height:30px;margin-left: 10px;background: url(../../images/jiantou.png)no-repeat;background-image:cover;}
 </style>
