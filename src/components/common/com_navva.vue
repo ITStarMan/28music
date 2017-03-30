@@ -2,8 +2,8 @@
  <div class="fenzong"> 
     <div class="fenlei" > 
       <span class="select">分类：</span>
-      <a ><span  class="select" v-on:click="toInfor(0)">全部</span></a>
-      <a  v-for="item in labellist" v-on:click="toInfor(item.labelID)">{{item.labelName}}</a>
+      <a><span class="all" v-on:click="toInfor(0)" v-bind:class="{'select': code == 0}">全部</span></a>
+      <a v-for="item in labellist.result" v-on:click="toInfor(item.labelID)" v-bind:class="{'select': code == item.labelID}">{{item.labelName}}</a>
       <div class="fenlei-rg">
          <span class="select">默认</span>
          <a href="">价格</a>
@@ -16,12 +16,14 @@
 </template>
 <script>
 import goods from '../../models/md_goodsList'
+import labellist from '../../models/md_label'
 
 export default{
   data () {
     return {
-      labellist: [],
-      goods
+      labellist,
+      goods,
+      code: 0
     }
   },
   ready: function () {
@@ -37,11 +39,12 @@ export default{
         type:'GET',
         success:function(data){
           console.log(data)
-          _this.labellist = data.label
+          _this.labellist.result = data.label
         }
       })
     },
      toInfor (id) {
+            this.code = id
             let _this = this
             let sendData = {}
             if(id == 0){
@@ -79,4 +82,7 @@ export default{
 .fenlei-rg{width:290px;height:50px;float:right; margin-right:30px;line-height:120px;}
  .sanjiao {display: inline-block;width:20px;height:20px;margin-left: 10px;background: url(../../images/sanjiao.png)no-repeat;}
 .jiantou{ display: inline-block; width:20px;height:30px;margin-left: 10px;background: url(../../images/jiantou.png)no-repeat;background-image:cover;}
+.all{
+  padding-left: 30px;
+}
 </style>
