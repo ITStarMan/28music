@@ -80,29 +80,6 @@ export default{
     	if(id == 0){
     		window.location.href = ''
     	}else{
-        let _this = this
-        let sendData = {
-            'CegID': id
-        }
-        $.ajax({
-            url:'http://www.28dagang.com/api/getAllGoods.php',
-            data: sendData,
-            DataType:'JSON',
-            type:'GET',
-            success:function(data){
-                _this.goods.result.label = data.label
-            }
-        })
-        $.ajax({
-          url:'http://www.28dagang.com/api/getAllGoods.php?CegID=' +  id,
-          data:{},
-          dataType:'JSON',
-          type:'GET',
-          success:function(data){
-            console.log(data)
-            _this.labellist.result = data.label
-          }
-        })
     		window.location.href = getDomain.getUrl('second/' + id)
     	}
     }

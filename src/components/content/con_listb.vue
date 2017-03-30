@@ -48,8 +48,12 @@ export default{
     ready: function () {
         this.getListSecond()
     },
+    watch:{
+        '$route':'getListSecond'
+    },
     methods: {
         getListSecond () {
+            $('body').animate( {scrollTop: 636}, 200)
             let _this = this
             $.ajax({
                 url:'http://www.28dagang.com/api/getAllGoods.php',

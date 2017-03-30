@@ -29,8 +29,12 @@ export default{
   ready: function () {
   	this.getListSecond()
   },
+  watch:{
+    '$route':'getListSecond'
+  },
   methods: {
     getListSecond () {
+      this.code = 0
       let _this = this
       $.ajax({
         url:'http://www.28dagang.com/api/getAllGoods.php?CegID=' +  this.$route.params.CegID,
