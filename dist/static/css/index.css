@@ -54,6 +54,12 @@
   cursor: pointer;
   display: none;
 }
+.banner_box .banner_ul li>a{
+	height: 100%;
+}
+.banner_box .banner_ul li>a>img{
+	height: 100%;
+}
 .banner_box .banner_ul li:first-child{
   display: block;
 }
