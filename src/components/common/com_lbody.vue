@@ -18,7 +18,7 @@
            </div>
            <div class="biaotu-right">
              <ul class="biaoul">
-               <a href="#"><li ><img src="../../images/left1.jpg"></li></a>
+               <a href="#"><li ><img v-bind:src="goods.onesPic"></li></a>
                <a href="#"><li ><img src="../../images/left2.jpg"></li></a>
                <a href="#"><li ><img src="../../images/left3.jpg"></li></a>
                <a href="#"><li ><img src="../../images/left4.png"></li></a>
@@ -28,7 +28,7 @@
         </div>
         <div class="biaowen">
           <div class="biaowenn">
-           <div class="name">精密氧化锆陶瓷刀</div>
+           <div class="name">{{goods.goodsName}}</div>
            <a href="#"><div class="chang">Stoneline制造商</div></a>
           </div>
           <div class="jian">抑菌、轻便、锋利-为健康严选</div>
@@ -101,7 +101,33 @@
   </div>
 </template>
 <script>
-
+export default{
+  data () {
+    return {
+      goods: {
+      }
+    }
+  },
+  ready: function () {
+    this.getGoods()
+  },
+  methods: {
+    getGoods () {
+      let _this = this
+      $.ajax({
+        url:'http://www.28dagang.com/api/getGoodsInfo.php?goodsID=1',
+        data:{},
+        dataType:'JSON',
+        type:'GET',
+        success:function(data){
+          
+          _this.goods = data[0]
+          console.log(_this.goods)
+        }
+      })
+    }
+  }
+}
 </script>
 <style>
  .biao{
@@ -321,7 +347,7 @@
      padding-top:20px;
      overflow:hidden;
      width:442px;
-     height:49px;
+     
  }
 .butl{
      float: left;

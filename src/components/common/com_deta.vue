@@ -218,9 +218,13 @@
           .zhuanli{
             margin-bottom: 20px;
           }
+          .zhuanli a{
+          position:relative;
+          }
           .zhuanli .text{
             width: 260px;
             position: absolute;
+            bottom:0;
             line-height: 30px;
             text-align: center;
             font-size: 14px;
