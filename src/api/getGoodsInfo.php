@@ -13,5 +13,7 @@ while($row = mysql_fetch_array($result)){
 while($row = mysql_fetch_array($r)){
 	$bb[]=$row;
 };
+$bb[0]['goodsPrice'] = $aa[0]['goodsPrice'];
+$bb[0]['goodsDesc'] = $aa[0]['goodsDesc'];
 echo json_encode($bb);
 ?>
