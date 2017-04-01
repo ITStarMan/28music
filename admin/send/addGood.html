@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+<head>   
+<meta charset="utf-8">   
+<title>上架商品</title>   
+<style type="text/css">
+	#oDiv{
+		text-align:center;
+		margin-top:100px;
+	}
+	#oDiv>div{
+		margin-bottom:20px;
+	}
+    .picBox{
+        width: 1400px;
+        margin: 50px auto;
+        overflow: hidden;
+    }
+    .bigPic{
+        float: left;
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+    .smallPic ul{
+        list-style: none;
+        margin: 0;
+    }
+    .smallPic li{
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .smallPic li img{
+        float: left;
+        margin-right: 50px;
+        border: 2px solid #fff;
+    }
+    .smallPic .loads{
+        float: left;
+    }
+    .smallPic .loads form{
+        margin-bottom: 10px;
+        margin-right: 50px;
+        margin-top: 16px;
+    }
+    .bigimage{
+        display: none;
+    }
+    .smallPic li img.active{
+        border: 2px solid #b4a078;
+    }
+</style>
+</head>
+<body>
+    <div id="oDiv">
+    	<div>
+            <label>选择分类：</label>
+            <select id="sec" onchange="getLabel(this.options[this.selectedIndex].value)">
+            </select>
+        </div>
+        <div>
+            <label>选择标签：</label>
+            <select id="label">
+            </select>
+        </div>
+    </div>
+    <div>
+        <div class="picBox">
+            <div class="bigPic">
+                <img class="bigimage" src="http://www.28dagang.com/images/1b.png">
+                <img class="bigimage" src="http://www.28dagang.com/images/2b.jpg">
+                <img class="bigimage" src="http://www.28dagang.com/images/3b.jpg">
+                <img class="bigimage" src="http://www.28dagang.com/images/4b.jpg">
+                <img class="bigimage" src="http://www.28dagang.com/images/5b.jpg">
+            </div>
+            <div class="smallPic">
+                <ul>
+                    <li>
+                        <img src="http://www.28dagang.com/images/1s.png" onmouseover="bigShow(0)" class="active rpic">
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form1">
+                                <input type="file" name="uploadfile" value="Upload File" id="upones">
+                                <input type="button" name="submit" value="Upload" id="onesmall"> 
+                            </form>
+                            <label>小图地址：</label>
+                            <input type="text" name="labelLogo" id="onesShow" />          
+                        </div>
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form2">
+                                <input type="file" name="uploadfile" value="Upload File" id="uponeb">
+                                <input type="button" name="submit" value="Upload" id="onebig"> 
+                            </form>
+                            <label>大图地址：</label>
+                            <input type="text" name="labelLogo" id="onebShow" />          
+                        </div>
+                    </li>
+                    <li>
+                        <img src="http://www.28dagang.com/images/2s.jpg" onmouseover="bigShow(1)" class="rpic">
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form3">
+                                <input type="file" name="uploadfile" value="Upload File" id="uptwos">
+                                <input type="button" name="submit" value="Upload" id="twosmall"> 
+                            </form>
+                            <label>小图地址：</label>
+                            <input type="text" name="labelLogo" id="twosShow" />          
+                        </div>
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form4">
+                                <input type="file" name="uploadfile" value="Upload File" id="uptwob">
+                                <input type="button" name="submit" value="Upload" id="twobig"> 
+                            </form>
+                            <label>大图地址：</label>
+                            <input type="text" name="labelLogo" id="twobShow" />          
+                        </div>
+                    </li>
+                    <li>
+                        <img src="http://www.28dagang.com/images/3s.jpg" onmouseover="bigShow(2)" class="rpic">
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form5">
+                                <input type="file" name="uploadfile" value="Upload File" id="upthrees">
+                                <input type="button" name="submit" value="Upload" id="threesmall"> 
+                            </form>
+                            <label>小图地址：</label>
+                            <input type="text" name="labelLogo" id="threesShow" />          
+                        </div>
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form6">
+                                <input type="file" name="uploadfile" value="Upload File" id="upthreeb">
+                                <input type="button" name="submit" value="Upload" id="threebig"> 
+                            </form>
+                            <label>大图地址：</label>
+                            <input type="text" name="labelLogo" id="threebShow" />          
+                        </div>
+                    </li>
+                    <li>
+                        <img src="http://www.28dagang.com/images/4s.jpg" onmouseover="bigShow(3)" class="rpic">
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form7">
+                                <input type="file" name="uploadfile" value="Upload File" id="upfours">
+                                <input type="button" name="submit" value="Upload" id="foursmall"> 
+                            </form>
+                            <label>小图地址：</label>
+                            <input type="text" name="labelLogo" id="foursShow" />          
+                        </div>
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form8">
+                                <input type="file" name="uploadfile" value="Upload File" id="upfourb">
+                                <input type="button" name="submit" value="Upload" id="fourbig"> 
+                            </form>
+                            <label>大图地址：</label>
+                            <input type="text" name="labelLogo" id="fourbShow" />          
+                        </div>
+                    </li>
+                    <li>
+                        <img src="http://www.28dagang.com/images/5s.jpg" onmouseover="bigShow(4)" class="rpic">
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form9">
+                                <input type="file" name="uploadfile" value="Upload File" id="upfives">
+                                <input type="button" name="submit" value="Upload" id="fivesmall"> 
+                            </form>
+                            <label>小图地址：</label>
+                            <input type="text" name="labelLogo" id="fivesShow" />          
+                        </div>
+                        <div class="loads">
+                            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form10">
+                                <input type="file" name="uploadfile" value="Upload File" id="upfiveb">
+                                <input type="button" name="submit" value="Upload" id="fivebig"> 
+                            </form>
+                            <label>大图地址：</label>
+                            <input type="text" name="labelLogo" id="fivebShow" />          
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="jquery-form.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    getCeg()
+    getLabel(1)
+    bigShow(0)
+});
+    function getCeg(){
+        $.ajax({
+            url:'http://www.28dagang.com/api/getCeg.php',
+            type:'GET',
+            dataType:'json',
+            data:{},
+            success:function(data){
+                if(data){
+                    var s = document.getElementById('sec');
+                    for(var i=0;i<data.length;i++){
+                        var o = document.createElement('option')
+                        s.appendChild(o);
+                        o.innerHTML = data[i].CegName
+                        o.value = data[i].CegID
+                    }
+                }
+            },
+        });
+    }
+    
+    function getLabel(id){
+        var s = document.getElementById('label');
+        s.options.length=0; 
+        $.ajax({
+            url:'http://www.28dagang.com/api/getLabel.php',
+            type:'GET',
+            dataType:'json',
+            data:{
+                'CegID': id
+            },
+            success:function(data){
+                if(data){
+                    for(var i=0;i<data.length;i++){
+                        var o = document.createElement('option')
+                        s.appendChild(o);
+                        o.innerHTML = data[i].labelName
+                        o.value = data[i].labelID
+                    }
+                }
+            },
+        });
+    }
+    
+    var big = document.getElementsByClassName('bigimage')
+    var pp = document.getElementsByClassName('rpic')
+    function bigShow(index){        
+        for(var i=0;i<big.length;i++){
+            big[i].style.display = 'none'
+            pp[i].className = 'rpic'
+        }
+        big[index].style.display = 'block'
+        pp[index].className = 'rpic active'
+    }
+
+    var onesmall = document.getElementById('onesmall'); 
+    var onesShow = document.getElementById('onesShow')
+    onesmall.onclick=function(){
+        if($("#upones").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form1").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                onesShow.value = response
+                pp[0].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var onebig = document.getElementById('onebig'); 
+    var onebShow = document.getElementById('onebShow')
+    onebig.onclick=function(){
+        if($("#uponeb").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form2").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                onebShow.value = response
+                big[0].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var twosmall = document.getElementById('twosmall'); 
+    var twosShow = document.getElementById('twosShow')
+    twosmall.onclick=function(){
+        if($("#uptwos").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form3").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                twosShow.value = response
+                pp[1].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var twobig = document.getElementById('twobig'); 
+    var twobShow = document.getElementById('twobShow')
+    twobig.onclick=function(){
+        if($("#uptwob").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form4").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                twobShow.value = response
+                big[1].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var threesmall = document.getElementById('threesmall'); 
+    var threesShow = document.getElementById('threesShow')
+    threesmall.onclick=function(){
+        if($("#upthrees").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form5").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                threesShow.value = response
+                pp[2].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var threebig = document.getElementById('threebig'); 
+    var threebShow = document.getElementById('threebShow')
+    threebig.onclick=function(){
+        if($("#upthreeb").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form6").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                threebShow.value = response
+                big[2].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var foursmall = document.getElementById('foursmall'); 
+    var foursShow = document.getElementById('foursShow')
+    foursmall.onclick=function(){
+        if($("#upfours").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form7").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                foursShow.value = response
+                pp[3].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var fourbig = document.getElementById('fourbig'); 
+    var fourbShow = document.getElementById('fourbShow')
+    fourbig.onclick=function(){
+        if($("#upfourb").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form8").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                fourbShow.value = response
+                big[3].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var fivesmall = document.getElementById('fivesmall'); 
+    var fivesShow = document.getElementById('fivesShow')
+    fivesmall.onclick=function(){
+        if($("#upfives").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form9").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                fivesShow.value = response
+                pp[4].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    var fivebig = document.getElementById('fivebig'); 
+    var fivebShow = document.getElementById('fivebShow')
+    fivebig.onclick=function(){
+        if($("#upfiveb").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form10").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                fivebShow.value = response
+                big[4].src = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+</script>
+</html>

@@ -39,6 +39,6 @@
 	?>
 	<a href="send/addCeg.html">添加分类</a>
 	<a href="send/addLabel.html">添加标签</a>
-	<a href="send/sendText.html">上架商品</a>
+	<a href="send/addGood.html">上架商品</a>
 </body>
 </html>
