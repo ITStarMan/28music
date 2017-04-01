@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>   
+<meta charset="utf-8">   
+<title>添加分类</title>   
+<style type="text/css">
+	#oDiv{
+		text-align:center;
+		margin-top:100px;
+	}
+	#oDiv>div{
+		margin-bottom:20px;
+	}
+</style>
+</head>
+<body>
+    <div id="oDiv">
+    	<div>
+    		<label>分类名字：</label>
+    		<input type="text" name="cegName" id="cegName" />
+    	</div>
+    	<div>
+    		<label>分类描述：</label>
+    		<input type="text" name="cegDesc" id="cegDesc" />
+    	</div>
+    	<input type="button" value="发布" id="commit" />
+    </div>
+</body>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    var cegName=document.getElementById("cegName");
+    var cegDesc=document.getElementById("cegDesc");
+    var commit=document.getElementById("commit");
+    commit.onclick=function(){
+        if(cegName.value == '' || cegDesc.value == ''){
+            alert('分类名和描述不能为空')
+            return false
+        }
+        $.ajax({
+            url:'http://www.28dagang.com/admin/send/api/addceg.php',
+            type:'GET',
+            dataType:'text',
+            data:{
+                'cegName':cegName.value,
+                'cegDesc':cegDesc.value
+            },
+            success:function(data){
+                if(data=="true"){
+                    alert("添加成功！");
+                    location.href="addCeg.html";
+                }else if(data=="false"){
+                    alert("添加失败，请重试！");
+                    location.href="addCeg.html";
+                }
+            },
+        });
+    }
+</script>
+</html>

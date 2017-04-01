@@ -10,8 +10,8 @@ export default{
       url = 'http://localhost:8080/#/' + perUrl
     }
     // 正式环境
-    if (test == -1 && sit == -1 && prod != -1) {
-      url = 'http://www.28dagang.com/' + perUrl
+    if (test == -1 && prod != -1) {
+      url = 'http://www.28dagang.com/#/' + perUrl
     }
     return url
   }

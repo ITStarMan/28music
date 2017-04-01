@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>   
+<meta charset="utf-8">   
+<title>发布音乐</title>   
+<style type="text/css">
+	#oDiv{
+		text-align:center;
+		margin-top:100px;
+	}
+	#oDiv>div{
+		margin-bottom:20px;
+	}
+</style>
+</head>
+<body>
+    <div id="oDiv">
+    	<div>
+    		<label>音乐名称：</label>
+    		<input type="text" name="name" id="name" />
+    	</div>
+    	<div>
+    		<label>音乐作者：</label>
+    		<input type="text" name="author" id="author" />
+    	</div>
+    	<div>
+    		<label>下载名称：</label>
+    		<input type="text" name="mname" id="mname" />
+    	</div>
+    	<input type="button" value="发布" id="commit" />
+    </div>
+</body>
+<script type="text/javascript" src="../../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    var dname=document.getElementById("name");
+    var author=document.getElementById("author");
+    var mname=document.getElementById("mname");
+    var commit=document.getElementById("commit");
+    commit.onclick=function(){
+        $.ajax({
+            url:'api/addMusic.php',
+            type:'GET',
+            dataType:'text',
+            data:{
+                name:dname.value,
+                author:author.value,
+                mname:mname.value
+            },
+            success:function(data){
+                if(data=="true"){
+                    alert("发表成功！");
+                    location.href="addmusic.html";
+                }else if(data=="false"){
+                    alert("发表失败，请重试！");
+                }
+            },
+        });
+    }
+</script>
+</html>

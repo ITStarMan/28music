@@ -7,6 +7,11 @@ const routers = {
   'deta': {
     component (resolve) {
       require(['./components/pages/pg_detail.vue'], resolve)
+  	}
+  },
+  '/second/:CegID': {
+    component (resolve) {
+      require(['./components/pages/pg_second.vue'], resolve)
     }
   }
 }

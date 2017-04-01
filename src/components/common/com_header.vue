@@ -19,32 +19,16 @@
   	<div class="list topList">
   		<div class="inner">
   			<ul>
-	  			<li><a class="active">首页</a></li>
-	  			<li><a>居家</a></li>
-	  			<li><a>餐厨</a></li>
-	  			<li><a>配件</a></li>
-	  			<li><a>服装</a></li>
-	  			<li><a>洗护</a></li>
-	  			<li><a>婴童</a></li>
-	  			<li><a>杂货</a></li>
-	  			<li><a>饮食</a></li>
-	  			<li><a>其他</a></li>
+	  			<li><a v-bind:class="{'active': cegstatus.code == 0}" v-on:click="toList(0)">首页</a></li>
+	  			<li v-for="item in ceg"><a v-bind:class="{'active': cegstatus.code == item.CegID}" v-on:click="toList(item.CegID)">{{item.CegName}}</a></li>
 	  		</ul>
   		</div>		
   	</div>
   	<div class="tipTop">
   		<div class="inner list">
   			<ul>
-	  			<li><a class="active">首页</a></li>
-	  			<li><a>居家</a></li>
-	  			<li><a>餐厨</a></li>
-	  			<li><a>配件</a></li>
-	  			<li><a>服装</a></li>
-	  			<li><a>洗护</a></li>
-	  			<li><a>婴童</a></li>
-	  			<li><a>杂货</a></li>
-	  			<li><a>饮食</a></li>
-	  			<li><a>其他</a></li>
+	  			<li><a v-bind:class="{'active': cegstatus.code == 0}" v-on:click="toList(0)">首页</a></li>
+	  			<li v-for="item in ceg"><a v-bind:class="{'active': cegstatus.code == item.CegID}" v-on:click="toList(item.CegID)">{{item.CegName}}</a></li>
 	  		</ul>
 	  		<div class="fr">
 	  			<a href="" class="login">登录</a>
@@ -54,12 +38,23 @@
   	</div>
 </template>
 <script>
+import commonsvc from '../../services/CommonSvc'
+import getDomain from '../../controllers/getDomain'
+import cegstatus from '../../models/md_cegstatus'
+import goods from '../../models/md_goodsList'
+import labellist from '../../models/md_label'
+
 export default{
   data () {
     return {
+    	ceg: [],
+    	cegstatus,
+      goods,
+      labellist
     }
   },
   ready: function () {
+  	this.getceg()
     $(window).scroll(function(){;
 		if($(window).scrollTop() > 232){
 			$('.tipTop').css('animation','show .3s')
@@ -71,6 +66,23 @@ export default{
 	})
   },
   methods: {
+  	getceg () {
+      let perUrl = 'http://www.28dagang.com/api/getCeg.php'
+      let perData = {}
+      let _this = this
+      commonsvc.get(perData, perUrl).done(function(result){
+        console.log(result)
+        _this.ceg = result
+      })
+    },
+    toList (id) {
+    	this.cegstatus.code = id
+    	if(id == 0){
+    		window.location.href = ''
+    	}else{
+    		window.location.href = getDomain.getUrl('second/' + id)
+    	}
+    }
   }
 }
 </script>

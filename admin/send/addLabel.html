@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>   
+<meta charset="utf-8">   
+<title>添加标签</title>   
+<style type="text/css">
+	#oDiv{
+        text-align:center;
+        margin-top:100px;
+    }
+    #oDiv>div{
+        margin-bottom:20px;
+    }
+    #commit{
+        display: block;
+        margin: 50px auto;
+        background: #2abfff;
+        outline: none;
+        border: none;
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 20px;
+        font-weight:bold;
+        cursor:pointer;
+    }
+    #form1{
+        margin-bottom: 20px;
+    }
+    select{
+        width: 170px;
+    }
+</style>
+</head>
+<body>
+    <div id="oDiv">
+        <div>
+            <label>选择分类：</label>
+            <select id="sec">
+            </select>
+        </div>
+        <div>
+            <label>标签名字：</label>
+            <input type="text" name="labelName" id="labelName" />
+        </div>
+        <div>
+            <form enctype="multipart/form-data" method="post" name="uploadform"  id="form1">
+                <input type="file" name="uploadfile" value="Upload File" id="upfile">
+                <input type="button" name="submit" value="Upload" id="upload"> 
+            </form>
+            <label>标签LOGO：</label>
+            <input type="text" name="labelLogo" id="labelLogo" />          
+        </div>
+        <div>
+            <label>标签描述：</label>
+            <input type="text" name="labelDesc" id="labelDesc" />
+        </div>
+        <input type="button" value="发布" id="commit" />
+    </div>
+</body>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="jquery-form.js"></script>
+<script type="text/javascript">
+    var content=document.getElementById("content");
+    var commit=document.getElementById("commit");
+    var picName = document.getElementById('labelLogo')
+    var labelName = document.getElementById('labelName')
+    var labelDesc = document.getElementById('labelDesc')
+    var s = document.getElementById('sec')
+    commit.onclick=function(){       
+        if(picName.value == '' || labelName.value == '' || labelDesc.value == ''){
+            alert('选项不能为空')
+            return false
+        }
+        $.ajax({
+            url:'http://www.28dagang.com/admin/send/api/addlabel.php',
+            type:'POST',
+            dataType:'text',
+            data:{
+                'CegID': s.value,
+                'labelName': labelName.value,
+                'labelLogo': picName.value,
+                'labelDesc': labelDesc.value
+            },
+            success:function(data){
+                if(data=="true"){
+                    alert("添加成功！");
+                    location.href="addLabel.html";
+                }else if(data=="false"){
+                    alert("添加失败，请重试！");
+                    location.href="addLabel.html";
+                }
+            },
+        });
+    }
+    var upload = document.getElementById('upload');    
+    upload.onclick=function(){
+        if($("#upfile").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#form1").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                picName.value = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
+    }
+    $.ajax({
+        url:'http://www.28dagang.com/api/getCeg.php',
+        type:'GET',
+        dataType:'json',
+        data:{},
+        success:function(data){
+            if(data){
+                var s = document.getElementById('sec');
+                for(var i=0;i<data.length;i++){
+                    var o = document.createElement('option')
+                    s.appendChild(o);
+                    o.innerHTML = data[i].CegName
+                    o.value = data[i].CegID
+                }
+            }
+        },
+    });
+</script>
+</html>

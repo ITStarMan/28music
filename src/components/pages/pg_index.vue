@@ -5,12 +5,14 @@
   	<con-index></con-index>
   </div>
   <com-show></com-show>
+  <com-footer></com-footer>
 </template>
 <script>
 import index from '../content/con_index'
 import header from '../common/com_header'
 import banner from '../common/com_banner'
 import show from '../common/com_showceg'
+import footer from '../common/com_footer'
 
 export default{
   data () {
@@ -25,7 +27,8 @@ export default{
     'con-index': index,
     'com-header': header,
     'com-banner': banner,
-    'com-show': show
+    'com-show': show,
+    'com-footer': footer
   }
 }
 </script>
