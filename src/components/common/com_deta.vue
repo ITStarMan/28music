@@ -103,11 +103,10 @@
 <style>
 
          .xbd{
-             margin-left:270px;
-             margin-top:50px;
+           margin-left:270px;
          }
           li {
-             display: list-item;
+            display: list-item;
             text-align: -webkit-match-parent;
             }
           .xiang-left{
