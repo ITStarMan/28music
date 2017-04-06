@@ -99,6 +99,33 @@
 </div>
 </template>
 <script>
+export default{
+  data () {
+    return {
+      goods: {
+      }
+    }
+  },
+  ready: function () {
+    this.getGoods()
+  },
+  methods: {
+    getGoods () {
+      let _this = this
+      $.ajax({
+        url:'http://www.28dagang.com/api/goodsInfoPic.php?goodsID=1',
+        data:{},
+        dataType:'JSON',
+        type:'GET',
+        success:function(data){
+          
+          _this.goods = data[0]
+          console.log(_this.goods)
+        }
+      })
+    }
+  }
+}
 </script>
 <style>
 
