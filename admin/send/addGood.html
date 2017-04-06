@@ -265,7 +265,7 @@
         <p class="title">提交商品</p>
     </div>
     <div class="submitInfo">
-        <button>提交</button>
+        <button onclick="submit()">提交</button>
     </div>
 </body>
 <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
@@ -604,8 +604,70 @@ $(document).ready(function(){
         }
     }
 
-    function infoLoad(){
-
+    function submit(){
+        var s1 = document.getElementById('sec');
+        var s2 = document.getElementById('label');
+        var name = document.getElementById('goodsName');
+        var desc = document.getElementById('goodsDesc');
+        var price = document.getElementById('goodsPrice');
+        var logo = document.getElementById('goodsLogo');
+        var small1 = document.getElementById('onesShow');
+        var big1 = document.getElementById('onebShow');
+        var small2 = document.getElementById('twosShow');
+        var big2 = document.getElementById('twobShow');
+        var small3 = document.getElementById('threesShow');
+        var big3 = document.getElementById('threebShow');
+        var small4 = document.getElementById('foursShow');
+        var big4 = document.getElementById('fourbShow');
+        var small5 = document.getElementById('fivesShow');
+        var big5 = document.getElementById('fivebShow');
+        if(s1.value == '' || s2.value == '' || name.value == '' || desc.value == '' || price.value == '' || logo.value == '' || small1.value == '' || big1.value == '' || small2.value == '' || big2.value == '' || small3.value == '' || big3.value == '' || small4.value == '' || big4.value == '' || small5.value == '' || big5.value == ''){
+            alert('input不能为空')
+            return false
+        }
+        var tt = $('.commitBox>input')
+        var infopic = []
+        for(var i=0;i<tt.length;i++){
+            infopic[i] = tt[i].value
+        }
+        infopic = JSON.stringify(infopic)
+        if(tt[0].value == ''){
+            alert('请至少添加一个介绍图片')
+            return false
+        }
+        $.ajax({
+            url:'http://www.28dagang.com/api/addGoods.php',
+            type:'POST',
+            dataType:'json',
+            data:{
+                'CegID': s1.value,
+                'labelID': s2.value,
+                'goodsName': name.value,
+                'goodsDesc': desc.value,
+                'goodsPrice': price.value,
+                'goodsLogo': logo.value,
+                'onesPic': small1.value,
+                'onebPic': big1.value,
+                'twosPic': small2.value,
+                'twobPic': big2.value,
+                'threesPic': small3.value,
+                'threebPic': big3.value,
+                'foursPic': small4.value,
+                'fourbPic': big4.value,
+                'fivesPic': small5.value,
+                'fivebPic': big5.value,
+                'goodsInfoPic': infopic
+            },
+            success:function(data){
+                if(data == 'true'){
+                    alert('上架成功!')
+                    location.href="addGood.html";
+                }else{
+                    alert("添加失败，请重试！");
+                    location.href="addGood.html";
+                }
+            },
+        });
     }
 </script>
 </html>
