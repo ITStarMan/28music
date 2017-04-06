@@ -33,8 +33,9 @@ while($ro = mysql_fetch_array($res)){
 };
 $labelName=$bb[0]["labelName"];
 $labelLogo=$bb[0]["labelLogo"];
+$labelDesc=$bb[0]["labelDesc"];
 $goodsInfoPic=json_decode($_POST['goodsInfoPic']);
-$sql="insert into goods (CegID,CegName,labelID,labelName,labelLogo,goodsName,goodsLogo,goodsPrice,goodsDesc,CreatTime) values ('$CegID','$CegName','$labelID','$labelName','$labelLogo','$goodsName','$goodsLogo','$goodsPrice','$goodsDesc','$date')";
+$sql="insert into goods (CegID,CegName,labelID,labelName,labelLogo,labelDesc,goodsName,goodsLogo,goodsPrice,goodsDesc,CreatTime) values ('$CegID','$CegName','$labelID','$labelName','$labelLogo','$labelDesc','$goodsName','$goodsLogo','$goodsPrice','$goodsDesc','$date')";
 $query = mysql_query($sql);
 if($query){
 	$r =mysql_query("select * from goods where CreatTime='$date'");
@@ -62,7 +63,7 @@ if($query){
 		if($code == 1){
 			echo 'true';
 		}else{
-			echo 'false3';
+			echo $goodsInfoPic;
 		}
 	}else{
 		echo "false2";
