@@ -13,23 +13,23 @@
             <div class="silie">
                 <div class="contn" v-for="li in item.goodsList">
                     <div class="contn-nei" v-on:click="toInfo(li.goodsID)">
-                        <a href="javascript: void(0)"><img v-bind:src="li.goodsLogo" alt=""></a>
-                        <div class="w-name">
-                            <h3><a href="">{{li.goodsName}}</a> </h3>
-                        </div>
-                        <div class="w-price">
-                            <span>
-                                ￥
-                            </span>
-                            <p>
-                                {{li.goodsPrice}}.00
-                            </p>
-                        </div>
-                        <div class="w-intur">
-                            <p>
-                                {{li.goodsDesc}}
-                            </p>
-                        </div>
+                        <a href="javascript: void(0)"><img v-bind:src="li.goodsLogo" alt=""></a>                        
+                    </div>
+                    <div class="w-name">
+                        <h3><a href="">{{li.goodsName}}</a> </h3>
+                    </div>
+                    <div class="w-price">
+                        <span>
+                            ￥
+                        </span>
+                        <p>
+                            {{li.goodsPrice}}.00
+                        </p>
+                    </div>
+                    <div class="w-intur">
+                        <p>
+                            {{li.goodsDesc}}
+                        </p>
                     </div>
                 </div>
              </div>
@@ -38,6 +38,7 @@
 </template>
 <script>
 import goods from '../../models/md_goodsList'
+import getDomain from '../../controllers/getDomain'
 
 export default{
   data () {
@@ -69,8 +70,7 @@ export default{
             })
          },
          toInfo (id) {
-            alert(id)
-            window.location.href = '' + id
+            window.location.href = getDomain.getUrl('deta/' + id)
          }
       },
 
@@ -86,9 +86,9 @@ export default{
     margin-left: 36px;}
         .xiaobiaoti h1{line-height: 50px;font-size: 36px;text-align: center;display:inline-block;}
         .xiaobiaoti p{text-align:center;colco:#eeeeee;display:block;width:200px;line-height:50px;marign-bottom:30px;}
-        .silie{width:1090px;height:450px;background:#ffffff;}
+        .silie{width:1090px;overflow:hidden;background:#ffffff;}
         .contn{width:250px;height:390px;float:left;margin-left:18px;margin-top: 40px;}
-        .contn-nei{width:250px;height:250px;background:#eeeeee;}
+        .contn-nei{width:250px;height:250px;background:#eeeeee;overflow:hidden;}
         .contn-nei img:hover{-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);transition-duration: 1s;}
         .w-name{width: 250px;height: 50px;text-align: center;margin: 0 auto;}
         .w-name h3{color:#000000;line-height:50px;cursor: pointer;}
