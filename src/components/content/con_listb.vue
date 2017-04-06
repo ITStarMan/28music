@@ -86,7 +86,7 @@ export default{
     margin-left: 36px;}
         .xiaobiaoti h1{line-height: 50px;font-size: 36px;text-align: center;display:inline-block;}
         .xiaobiaoti p{text-align:center;colco:#eeeeee;display:block;width:200px;line-height:50px;marign-bottom:30px;}
-        .silie{width:1090px;overflow:hidden;background:#ffffff;}
+        .silie{width:1090px;overflow:hidden;background:#ffffff;min-height:450px;}
         .contn{width:250px;height:390px;float:left;margin-left:18px;margin-top: 40px;}
         .contn-nei{width:250px;height:250px;background:#eeeeee;overflow:hidden;}
         .contn-nei img:hover{-webkit-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);transition-duration: 1s;}
