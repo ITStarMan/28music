@@ -42,7 +42,6 @@ export default{
         dataType:'JSON',
         type:'GET',
         success:function(data){
-          console.log(data)
           _this.labellist.result = data.label
         }
       })
@@ -67,9 +66,7 @@ export default{
                 DataType:'JSON',
                 type:'GET',
                 success:function(data){
-                   console.log(data)
                     _this.goods.result.label = data.label
-                    console.log(_this.goods.label)
                 }
             })
          },

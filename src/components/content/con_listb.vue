@@ -64,7 +64,6 @@ export default{
                 DataType:'JSON',
                 type:'GET',
                 success:function(data){
-                    console.log(data)
                     _this.goods.result.label = data.label
                 }
             })
