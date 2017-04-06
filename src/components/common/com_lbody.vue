@@ -74,8 +74,10 @@ export default{
     getGoods () {
       let _this = this
       $.ajax({
-        url:'http://www.28dagang.com/api/getGoodsInfo.php?goodsID=1',
-        data:{},
+        url:'http://www.28dagang.com/api/getGoodsInfo.php',
+        data:{
+        	'goodsID': this.$route.params.goodsID
+        },
         dataType:'JSON',
         type:'GET',
         success:function(data){
