@@ -36,26 +36,7 @@
       </div>    
 
       <div class="tujpg">
-          <p><img src="../../images/xiang1.jpg" alt=""></p>
-          <p><img src="../../images/xiang2.jpg" alt=""></p>
-          <p><img src="../../images/xiang3.jpg" alt=""></p>
-          <p><img src="../../images/xiang4.jpg" alt=""></p>
-          <p><img src="../../images/xing4(1).jpg" alt=""></p>
-          <p><img src="../../images/xiang5.jpg" alt=""></p>
-          <p><img src="../../images/xiang6.jpg" alt=""></p>
-          <p><img src="../../images/xiang6(1).jpg" alt=""></p>
-          <p><img src="../../images/xiang7.jpg" alt=""></p>
-          <p><img src="../../images/xiang8.jpg" alt=""></p>
-          <p><img src="../../images/xiang9.jpg" alt=""></p>
-          <p><img src="../../images/xiang10.jpg" alt=""></p>
-          <p><img src="../../images/xiang11.jpg" alt=""></p>
-          <p><img src="../../images/xiang12.jpg" alt=""></p>
-          <p><img src="../../images/xiang13.jpg" alt=""></p>
-          <p><img src="../../images/xiang14(1).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(2).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(3).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(4).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(5).jpg" alt=""></p>
+          <p v-for="item in goods.goodsInfoPic"><img v-bind:src="item.goodsPic" alt=""></p>
       </div>
     </div>
 
@@ -99,15 +80,43 @@
 </div>
 </template>
 <script>
+export default{
+  data () {
+    return {
+      goods: {
+      }
+    }
+  },
+  ready: function () {
+    this.getGoods()
+  },
+  methods: {
+    getGoods () {
+      let _this = this
+      $.ajax({
+        url:'http://www.28dagang.com/api/getGoodsInfo.php',
+        data:{
+          'goodsID': this.$route.params.goodsID
+        },
+        dataType:'JSON',
+        type:'GET',
+        success:function(data){
+          
+          _this.goods = data[0]
+          console.log(_this.goods)
+        }
+      })
+    }
+  }
+}
 </script>
 <style>
 
          .xbd{
-             margin-left:270px;
-             margin-top:50px;
+           margin-left:270px;
          }
           li {
-             display: list-item;
+            display: list-item;
             text-align: -webkit-match-parent;
             }
           .xiang-left{

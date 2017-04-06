@@ -7,22 +7,22 @@
        <span>></span>
        <a href="#" class="bl">刀铲</a>
        <span>></span>
-       <span class="bl1">精密氧化锆陶瓷刀</span>
+       <span class="bl1">{{goods.goodsName}}</span>
      </div>
 
 
      <div class="biaob">
         <div class="biaotu">
            <div class="biaotu-left">
-             <img src="../../images/right1.jpg">
+             <img v-bind:src="goods.onebPic">
            </div>
            <div class="biaotu-right">
              <ul class="biaoul">
                <a href="#"><li ><img v-bind:src="goods.onesPic"></li></a>
-               <a href="#"><li ><img src="../../images/left2.jpg"></li></a>
-               <a href="#"><li ><img src="../../images/left3.jpg"></li></a>
-               <a href="#"><li ><img src="../../images/left4.png"></li></a>
-               <a href="#"><li ><img src="../../images/left5.jpg"></li></a>
+               <a href="#"><li ><img v-bind:src="goods.twosPic"></li></a>
+               <a href="#"><li ><img v-bind:src="goods.threesPic"></li></a>
+               <a href="#"><li ><img v-bind:src="goods.foursPic"></li></a>
+               <a href="#"><li ><img v-bind:src="goods.fivesPic"></li></a>
              </ul>
            </div>
         </div>
@@ -31,14 +31,14 @@
            <div class="name">{{goods.goodsName}}</div>
            <a href="#"><div class="chang">Stoneline制造商</div></a>
           </div>
-          <div class="jian">抑菌、轻便、锋利-为健康严选</div>
+          <div class="jian">{{goods.goodsDesc}}</div>
 
 
           <div class="price">
              <div class="prices">
               <span class="label">售价</span>
               <span class="rm">¥</span>
-              <span class="rmb">39.00</span>
+              <span class="rmb">{{goods.goodsPrice}}.00</span>
              </div>
              <div class="cu">
               <span class="label">促销</span>
@@ -48,55 +48,14 @@
                 </a>
              </div>
              <div class="fuwu">
-              <span class="label">服务</span>
-                <div class="fuul">
-                <a href="#">
-                  <ul>
-                  <li>30天无忧退货</li>
-                  <li>48小时快速退款</li>
-                  <li>满88元免邮费</li>
-                  <li>网易自营品牌</li>
-                  </ul>
-                </a>  
-                 </div>
+              <span class="label">月销量</span>
+                <div class="fuul">{{goods.goodsSelas}}</div>
              </div>
         </div>
+         
+        <div class="like"></div> 
 
-        <div class="shu">
-           <div class="gui">
-           <span class="nameg">规格</span>
-           </div>
-           <div class="guiul">
-             <ul>
-               <a href="#"><li class="guili">5英寸多功能刀</li></a>
-               <a href="#"><li class="guili">6英寸多功能刀</li></a> 
-             </ul>
-           </div>
-        </div>
-
-        <div class="shu1">
-           <div class="liang">
-           <span class="namel">数量</span>
-           </div>
-           <div class="box">
-              <span><i class="hx"></i></span>
-           </div>
-        </div>
-
-        <div class="but">
-          <div class="butl">
-           <a>
-           <span>立即购买</span>
-           </a>
-         </div>
-         <div class="buttj">
-           <a>
-           <span>加入购物车</span>
-           </a>
-         </div>  
-        </div>
-
-        </div>
+       </div>
      </div>
   </div>
 </template>
@@ -115,8 +74,10 @@ export default{
     getGoods () {
       let _this = this
       $.ajax({
-        url:'http://www.28dagang.com/api/getGoodsInfo.php?goodsID=1',
-        data:{},
+        url:'http://www.28dagang.com/api/getGoodsInfo.php',
+        data:{
+        	'goodsID': this.$route.params.goodsID
+        },
         dataType:'JSON',
         type:'GET',
         success:function(data){
@@ -213,7 +174,6 @@ export default{
  }
  .price .label{
      float:left;
-     width:45px;
      padding-left:10px;
      font-size: 12px;
      color: #999;
@@ -262,24 +222,16 @@ export default{
      padding-top:5px;
  }
  .fuwu .fuul{
-    float:left;
+     position: relative;
+     left:30px;
     width: 380px;
     height: 12px;
     margin: 6px 0;
     line-height: 12px;
-    color: #666;
-    cursor: pointer;
-    overflow: hidden;
-    text-align: center;
+    color:#d7282d;
  }
- .fuul a:hover{
-     text-decoration:underline;
- }
- .fuwu ul li{
-     padding-left:10px;
-     float:left;
-     font-size: 12px;
-     color: #999;
+ .like{
+     height:300px;
  }
  .shu{
      width:504px;
@@ -294,8 +246,7 @@ export default{
  }
  .guiul{
      float:left;
-     width:438px;
-     
+     width:438px; 
  }
  .guiul .guili{
     float:left;
