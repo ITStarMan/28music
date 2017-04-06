@@ -4,7 +4,7 @@ const routers = {
       require(['./components/pages/pg_index.vue'], resolve)
     }
   },
-  'deta': {
+  '/deta/:goodsID': {
     component (resolve) {
       require(['./components/pages/pg_detail.vue'], resolve)
     }

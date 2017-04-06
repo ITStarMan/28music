@@ -12,50 +12,8 @@
            </li>
          </ul>
        </div>
-
-       <div class="jieshao">
-          <ul class="jieul">
-            <li class="jieli1">
-              <span class="jiename">刀身材质</span>
-              <span class="jievl">氧化锆陶瓷</span>
-            </li>
-            <li class="jieli2">
-              <span class="jiename">刀柄材质</span>
-              <span class="jievl">丙烯腈-丁二烯-苯乙烯共聚物ABS</span>
-            </li>
-            <li class="jieli3">
-              <span class="jiename">颜色</span>
-              <span class="jievl">黑色</span>
-            </li>
-            <li class="jieli4">
-              <span class="jiename">注意事项</span>
-              <span class="jievl">1. 4寸水果刀请勿切西瓜、哈密瓜、木瓜、香瓜等外皮坚硬、瓜果直径长于刀身长度的瓜果。<br>
-                                  2. 因刀具管制条例，不发货到新疆地区，敬请谅解。</span>
-            </li>
-          </ul>
-      </div>    
-
       <div class="tujpg">
-          <p><img src="../../images/xiang1.jpg" alt=""></p>
-          <p><img src="../../images/xiang2.jpg" alt=""></p>
-          <p><img src="../../images/xiang3.jpg" alt=""></p>
-          <p><img src="../../images/xiang4.jpg" alt=""></p>
-          <p><img src="../../images/xing4(1).jpg" alt=""></p>
-          <p><img src="../../images/xiang5.jpg" alt=""></p>
-          <p><img src="../../images/xiang6.jpg" alt=""></p>
-          <p><img src="../../images/xiang6(1).jpg" alt=""></p>
-          <p><img src="../../images/xiang7.jpg" alt=""></p>
-          <p><img src="../../images/xiang8.jpg" alt=""></p>
-          <p><img src="../../images/xiang9.jpg" alt=""></p>
-          <p><img src="../../images/xiang10.jpg" alt=""></p>
-          <p><img src="../../images/xiang11.jpg" alt=""></p>
-          <p><img src="../../images/xiang12.jpg" alt=""></p>
-          <p><img src="../../images/xiang13.jpg" alt=""></p>
-          <p><img src="../../images/xiang14(1).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(2).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(3).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(4).jpg" alt=""></p>
-          <p><img src="../../images/xiang14(5).jpg" alt=""></p>
+          <p v-for="item in goods.goodsInfoPic"><img v-bind:src="item.goodsPic" alt=""></p>
       </div>
     </div>
 
@@ -112,9 +70,14 @@ export default{
   methods: {
     getGoods () {
       let _this = this
+      $('body').animate( {scrollTop: 0}, 100)
       $.ajax({
         url:'http://www.28dagang.com/api/goodsInfoPic.php?goodsID=1',
         data:{},
+        url:'http://www.28dagang.com/api/getGoodsInfo.php',
+        data:{
+          'goodsID': this.$route.params.goodsID
+        },
         dataType:'JSON',
         type:'GET',
         success:function(data){

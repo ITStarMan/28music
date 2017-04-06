@@ -1,5 +1,6 @@
 <template>
-  <div class="lbody_box">
+<div class="lbody_box">
+
     <div class="biao">
        <a href="#" class="bl">首页</a>
        <span>></span>
@@ -12,6 +13,7 @@
 
 
      <div class="biaob">
+
         <div class="biaotu">
            <div class="biaotu-left">
              <img v-bind:src="goods.onebPic">
@@ -26,14 +28,12 @@
              </ul>
            </div>
         </div>
-        <div class="biaowen">
+
+        <div class="biaowen">        
           <div class="biaowenn">
-           <div class="name">{{goods.goodsName}}</div>
-           <a href="#"><div class="chang">Stoneline制造商</div></a>
+             <div class="name">{{goods.goodsName}}</div>
           </div>
-          <div class="jian">{{goods.goodsDesc}}</div>
-
-
+             <div class="jian">{{goods.goodsDesc}}</div>
           <div class="price">
              <div class="prices">
               <span class="label">售价</span>
@@ -51,13 +51,13 @@
               <span class="label">月销量</span>
                 <div class="fuul">{{goods.goodsSelas}}</div>
              </div>
+         </div>   
+           <div class="like"></div> 
         </div>
-         
-        <div class="like"></div> 
 
-       </div>
-     </div>
-  </div>
+    </div>
+
+</div>
 </template>
 <script>
 export default{
@@ -72,10 +72,13 @@ export default{
   },
   methods: {
     getGoods () {
+      $('body').animate( {scrollTop: 0}, 100)
       let _this = this
       $.ajax({
-        url:'http://www.28dagang.com/api/getGoodsInfo.php?goodsID=1',
-        data:{},
+        url:'http://www.28dagang.com/api/getGoodsInfo.php',
+        data:{
+        	'goodsID': this.$route.params.goodsID
+        },
         dataType:'JSON',
         type:'GET',
         success:function(data){
@@ -89,8 +92,11 @@ export default{
 }
 </script>
 <style>
+ .lbody_box{
+     width:1090px;
+     margin: 0 auto;
+ }
  .biao{
-     margin-left:270px;
      margin-top:40px;
  }
  .biao .bl{
@@ -105,14 +111,15 @@ export default{
      text-decoration:underline;
  }
  .biaob{
-    width:1450px;
+    width:1090px;
+ }
+ .biaotu{
+    width:600px;
  }
  .biaotu .biaotu-left{
     position: relative;
     float: left;
-    width: 430px;
     border: 1px solid #e8e8e8;
-    margin-left: 270px;
     margin-top:20px;
  }
  .biaotu-right .biaoul{
@@ -130,8 +137,8 @@ export default{
      border: 3px solid #b4a078;
  }
  .biaowen{
-     float: left;
-     width: 566px;
+    float: left;
+    width: 440px;
     padding-left: 62px;
     padding-top:15px;
  }

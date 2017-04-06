@@ -4,9 +4,11 @@
 <meta charset="utf-8">   
 <title>上架商品</title>   
 <style type="text/css">
+    body{
+        margin: 0;
+    }
 	#oDiv{
 		text-align:center;
-		margin-top:100px;
 	}
 	#oDiv>div{
 		margin-bottom:20px;
@@ -48,9 +50,53 @@
     .smallPic li img.active{
         border: 2px solid #b4a078;
     }
+    .title{
+        text-align: center;
+        font-size: 20px;
+        background: #2abfff;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .infoBox,.addinfo{
+        width: 800px;
+        height: 400px;
+        border: 2px solid #6a6a6a;
+        margin: 20px auto;
+        line-height: 400px;
+        text-align: center;
+    }
+    .commitBox{
+        text-align: center;
+    }
+    .commitBox>input{
+        display: none;
+    }
+    .commitBox>form{
+        background-size: 100% 100%;
+    }
+    .submitInfo{
+        text-align: center;
+    }
+    .submitInfo button{
+        padding: 30px 60px;
+        margin: 100px 0;
+        background: #d9534f;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
+    <div>
+        <p class="title">商品基础信息</p>
+    </div>
     <div id="oDiv">
     	<div>
             <label>选择分类：</label>
@@ -62,6 +108,29 @@
             <select id="label">
             </select>
         </div>
+        <div>
+            <label>商品名称：</label>
+            <input type="text" name="goodsName" id="goodsName" />
+        </div>
+        <div>
+            <label>商品描述：</label>
+            <input type="text" name="goodsDesc" id="goodsDesc" />
+        </div>
+        <div>
+            <label>商品价格：</label>
+            <input type="text" name="goodsPrice" id="goodsPrice" />
+        </div>
+        <div>
+            <form enctype="multipart/form-data" method="post" name="uploadform"  id="formLogo">
+                <input type="file" name="uploadfile" value="Upload File" id="upLogo">
+                <input type="button" name="submit" value="Upload" id="uploadLogo"> 
+            </form>
+            <label>商品LOGO：</label>
+            <input type="text" name="labelLogo" id="goodsLogo" />  
+        </div>
+    </div>
+    <div>
+        <p class="title">商品详情图片选择</p>
     </div>
     <div>
         <div class="picBox">
@@ -173,6 +242,31 @@
             </div>
         </div>
     </div>
+    <div>
+        <p class="title">商品详情介绍</p>
+    </div>
+    <div class="infoBig" id="infoBig">
+        <div class="infoBox">
+            <div class="commitBox">
+                <form enctype="multipart/form-data" method="post" name="uploadform"  id="info1">
+                    <input type="file" name="uploadfile" value="Upload File" id="uinfo1">
+                    <input type="button" name="submit" value="Upload" id="cinfo1" class="cbtn"> 
+                </form>
+                <input type="text" id="sinfo1" />
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="addinfo">
+            <button id="addBlock">添加一个模块</button>
+        </div>
+    </div>
+    <div>
+        <p class="title">提交商品</p>
+    </div>
+    <div class="submitInfo">
+        <button>提交</button>
+    </div>
 </body>
 <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="jquery-form.js"></script>
@@ -224,7 +318,7 @@ $(document).ready(function(){
             },
         });
     }
-    
+
     var big = document.getElementsByClassName('bigimage')
     var pp = document.getElementsByClassName('rpic')
     function bigShow(index){        
@@ -234,6 +328,25 @@ $(document).ready(function(){
         }
         big[index].style.display = 'block'
         pp[index].className = 'rpic active'
+    }
+
+    var uploadLogo = document.getElementById('uploadLogo'); 
+    var goodsLogo = document.getElementById('goodsLogo')
+    uploadLogo.onclick=function(){
+        if($("#upLogo").val()==""){
+          alert("请选择一个图片文件,再点击");
+          return;
+        }
+        $("#formLogo").ajaxSubmit({
+            url:"http://www.28dagang.com/api/usload.php",
+            type:"POST",
+            success:function(response){
+                goodsLogo.value = response
+            },
+            error:function(msg){
+                console.log(msg);               
+            }
+        });
     }
 
     var onesmall = document.getElementById('onesmall'); 
@@ -425,6 +538,74 @@ $(document).ready(function(){
                 console.log(msg);               
             }
         });
+    }
+
+    var addBtn = document.getElementById('addBlock')
+    var infoAll = document.getElementById('infoBig')
+    var addparam = 1
+    addBtn.onclick=function(){
+        addparam = addparam + 1
+        var ainput=document.createElement("input");
+        var binput=document.createElement("input");
+        var cinput=document.createElement("input");
+        var aDiv=document.createElement("div");
+        var bDiv=document.createElement("div");
+        var form=document.createElement("form");
+        infoAll.appendChild(aDiv);
+        aDiv.appendChild(bDiv);
+        bDiv.appendChild(form);
+        bDiv.appendChild(cinput);
+        form.appendChild(ainput);
+        form.appendChild(binput);
+        aDiv.className = 'infoBox'
+        bDiv.className = 'commitBox'
+        binput.className = 'cbtn'
+        form.setAttribute('enctype','multipart/form-data')
+        form.setAttribute('method','post')
+        form.setAttribute('name','uploadform')
+        form.setAttribute('id','info' + addparam)
+        ainput.setAttribute('type','file')
+        ainput.setAttribute('name','uploadfile')
+        ainput.setAttribute('value','Upload File')
+        ainput.setAttribute('id','uinfo' + addparam)
+        binput.setAttribute('type','button')
+        binput.setAttribute('name','submit')
+        binput.setAttribute('value','Upload')
+        binput.setAttribute('id','cinfo' + addparam)
+        cinput.setAttribute('type','text')
+        cinput.setAttribute('id','sinfo' + addparam)
+        bind()
+    }
+
+    bind()
+    function bind(){
+        var cBtn = document.getElementsByClassName('cbtn')
+        for(var i=0;i<cBtn.length;i++){
+            cBtn[i].index = i
+            cBtn[i].onclick=function(){
+                if($("#uinfo" + (this.index + 1)).val()==""){
+                  alert("请选择一个图片文件,再点击");
+                  return;
+                }
+                var show = document.getElementById('sinfo' + (this.index + 1))
+                var form = document.getElementById('info' + (this.index + 1))
+                $("#info" + (this.index + 1)).ajaxSubmit({
+                    url:"http://www.28dagang.com/api/usload.php",
+                    type:"POST",
+                    success:function(response){
+                        show.value = response
+                        form.style.backgroundImage = 'url(' + response + ')'
+                    },
+                    error:function(msg){
+                        console.log(msg);               
+                    }
+                });
+            }
+        }
+    }
+
+    function infoLoad(){
+
     }
 </script>
 </html>
