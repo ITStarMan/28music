@@ -103,15 +103,15 @@ export default{
 }
 .bannerTop a{
 	position: absolute;
-    top: 50px;
-    left: 434px;
-    z-index: 2;
-    display: inline-block;
-    width: 180px;
-    height: 60px;
-    background-position: 0 -222px;
-    background-image: url(http://mimg.127.net/hxm/yanxuan-web/p/20150730/style/img/header-s63686fd389-4827c33dfe.png);
-    background-repeat: no-repeat;
+  top: 30px;
+  left: 280px;
+  z-index: 2;
+  display: inline-block;
+  width: 500px;
+  height: 100px;
+  background-image: url(http://www.28dagang.com/images/logo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .search{
 	line-height: 160px;

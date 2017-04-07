@@ -13,6 +13,16 @@ const routers = {
     component (resolve) {
       require(['./components/pages/pg_second.vue'], resolve)
     }
+  },
+  '/reg': {
+    component (resolve) {
+      require(['./components/pages/pg_reg.vue'], resolve)
+    }
+  },
+  '/login': {
+    component (resolve) {
+      require(['./components/pages/pg_login.vue'], resolve)
+    }
   }
 }
 
