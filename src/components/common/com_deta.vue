@@ -177,9 +177,9 @@ export default{
             padding-top: 20px;
             padding-left: 30px;
           }
-          .jpg{
+          .tujpg{
             width: 750px;
-            padding-top: 100px;
+            padding-top: 80px;
           }
           .xiang-right{
             float: left;
