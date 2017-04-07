@@ -13,7 +13,6 @@ import header from '../common/com_header'
 import banner from '../common/com_banner'
 import show from '../common/com_showceg'
 import footer from '../common/com_footer'
-
 export default{
   data () {
     return {

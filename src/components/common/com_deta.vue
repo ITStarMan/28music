@@ -93,8 +93,16 @@ export default{
 <style>
 
          .xbd{
-           margin-left:270px;
+           width:1090px;
+           margin: 0 auto;
          }
+        .xbd:after{
+            display: block;
+            content: '.';
+            clear: both;
+            line-height: 0;
+            visibility: hidden;
+           }
           li {
             display: list-item;
             text-align: -webkit-match-parent;
@@ -177,9 +185,9 @@ export default{
             padding-top: 20px;
             padding-left: 30px;
           }
-          .jpg{
+          .tujpg{
             width: 750px;
-            padding-top: 100px;
+            padding-top: 80px;
           }
           .xiang-right{
             float: left;

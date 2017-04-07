@@ -4,13 +4,10 @@
     <div class="biao">
        <a href="#" class="bl">首页</a>
        <span>></span>
-       <a href="#" class="bl">餐厨</a>
-       <span>></span>
-       <a href="#" class="bl">刀铲</a>
+       <a v-on:click="getInfo(goods.CegID)" class="bl">{{goods.CegName}}</a>
        <span>></span>
        <span class="bl1">{{goods.goodsName}}</span>
      </div>
-
 
      <div class="biaob">
 
@@ -41,15 +38,12 @@
               <span class="rmb">{{goods.goodsPrice}}.00</span>
              </div>
              <div class="cu">
-              <span class="label">促销</span>
-                <a href="#">
-                  <div class="chu">出行季</div>
-                  <span class="chu1">满赠199元好礼，领全场券更优惠</span>
-                </a>
+              <span class="label">月销量</span>
+                  <span class="fuul">{{goods.goodsSelas}}</span>
              </div>
              <div class="fuwu">
-              <span class="label">月销量</span>
-                <div class="fuul">{{goods.goodsSelas}}</div>
+              <span class="label">浏览人数</span>
+                <div class="fuul">{{goods.goodsSee}}</div>
              </div>
          </div>   
            <div class="like"></div> 
@@ -60,6 +54,9 @@
 </div>
 </template>
 <script>
+import goods from '../../models/md_goodsList'
+import getDomain from '../../controllers/getDomain'
+
 export default{
   data () {
     return {
@@ -87,8 +84,12 @@ export default{
           console.log(_this.goods)
         }
       })
-    }
-  }
+    },
+    getInfo (ss) { 
+            window.location.href = getDomain.getUrl('second/' + ss)
+           
+         }
+  },
 }
 </script>
 <style>
@@ -112,6 +113,13 @@ export default{
  }
  .biaob{
     width:1090px;
+ }
+ .biaob:after{
+    display: block;
+    content: '.';
+    clear: both;
+    line-height: 0;
+    visibility: hidden;
  }
  .biaotu{
     width:600px;
@@ -204,29 +212,13 @@ export default{
  .price .cu{
     height:28px;
  }
- .price .cu .chu{
-     background-color: #d7282d;
-     color: #fff;
-     display: inline-block;
-     width: 55px;
-     height: 18px;
-     line-height: 18px;
-     font-size: 12px;
-     text-align: center;
-     position: relative;
-     margin-left: 20px;
- }
- .price .cu .chu1{
-     font-size: 12px;
-     color:#d7282d;
-     text-decoration:underline;
- }
+
  .fuwu{
      width:100%;
      height:25px;
      padding-top:5px;
  }
- .fuwu .fuul{
+ .fuul{
      position: relative;
      left:30px;
     width: 380px;
