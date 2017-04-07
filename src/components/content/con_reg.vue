@@ -9,12 +9,12 @@
     <div class="formIn">
       <div class="clx">
         <label>手机号：</label>
-        <input type="text" />
+        <input type="text" v-model="phone" />
       </div>
       <div class="clx yzm">
         <label>验证码：</label>
         <input type="text" />
-        <span>获取验证码</span>
+        <span v-on:click="check()">获取验证码</span>
       </div>
       <div class="clx">
         <label>密码：</label>
@@ -37,15 +37,37 @@
 </div>
 </template>
 <script>
+import commonsvc from '../../services/CommonSvc'
 
 export default{
   data () {
     return {
+      phone: ''
     }
   },
   ready: function () {
   },
   methods: {
+    check () {
+      alert(this.phone)
+      let perUrl = 'https://api.netease.im/sms/sendcode.action'
+      let perData = {
+        'mobile': this.phone
+      }
+      $.ajax({
+        url: perUrl,
+        data: perData,
+        DataType: 'JSON',
+        type: 'POST',
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "AppKey": "9f641251a75044ec9dced1c81d26f097"
+        },
+        success:function(data){
+          console.log(data)
+        }
+      })
+    }
   }
 }
 </script>
