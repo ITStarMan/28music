@@ -93,8 +93,16 @@ export default{
 <style>
 
          .xbd{
-           margin-left:270px;
+           width:1090px;
+           margin: 0 auto;
          }
+        .xbd:after{
+            display: block;
+            content: '.';
+            clear: both;
+            line-height: 0;
+            visibility: hidden;
+           }
           li {
             display: list-item;
             text-align: -webkit-match-parent;
