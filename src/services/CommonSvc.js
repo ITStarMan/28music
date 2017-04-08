@@ -4,35 +4,14 @@ window.jQuery = $
 import getDomain from '../controllers/getDomain'
 
 export default {
-  post (perData, perUrl, code, asy) {
-    let Url = ''
-    if (code != undefined) {
-      switch (code) {
-        case 1:
-          Url = getDomain.getApi(perUrl)
-          break
-        case 2:
-          Url = getDomain.getPassport(perUrl)
-          break
-        case 3:
-          Url = getDomain.getSDKdownload(perUrl)
-          break
-        default:
-
-      }
-    } else {
-      Url = perUrl
-    }
+  post (perData, perUrl, asy) {
     return $.ajax({
-      url: Url,
+      url: perUrl,
       traditional: true,
       type: 'post',
       dataType: 'json',
       data: perData,
-      async: asy == undefined ? true : asy,
-      xhrFields: {
-        withCredentials: true
-      }
+      async: asy == undefined ? true : asy
     })
   },
   get (perData, perUrl, async) {

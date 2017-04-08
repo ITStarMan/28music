@@ -2,9 +2,9 @@
   	<div class="headerBox">
 	  	<div class="inner">
 	  		<p class="topTitle fl">你想要的，都在这里</p>
-	  		<div class="fr">
-	  			<a href="" class="login">登录</a>
-	  			<a href="" >注册</a>
+	  		<div class="fr loginBox">
+	  			<a class="login">登录</a>
+	  			<a v-on:click="toReg()">注册</a>
 	  		</div>
 	  	</div>
   	</div>
@@ -32,7 +32,7 @@
 	  		</ul>
 	  		<div class="fr">
 	  			<a href="" class="login">登录</a>
-	  			<a href="" >注册</a>
+	  			<a v-on:click="toReg()">注册</a>
 	  		</div>
   		</div>
   	</div>
@@ -82,6 +82,9 @@ export default{
     	}else{
     		window.location.href = getDomain.getUrl('second/' + id)
     	}
+    },
+    toReg () {
+      window.location.href = getDomain.getUrl('reg')
     }
   }
 }
@@ -169,5 +172,9 @@ color: #b4a078;
 	100%{
 		top: -50px;
 	}
+}
+.loginBox>a{
+  color: #ccc;
+  cursor: pointer;
 }
 </style>

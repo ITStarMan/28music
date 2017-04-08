@@ -1,7 +1,7 @@
 <template>
 <div class="container clx">
   <div class="topBox">
-    <h1 class="fl">账号</h1>
+    <h1 class="fl">三加账号</h1>
     <p class="fr">已有账号？去<a>登录</a></p>
   </div>
   <div class="formBox">
@@ -9,28 +9,29 @@
     <div class="formIn">
       <div class="clx">
         <label>手机号：</label>
-        <input type="text" v-model="phone" />
+        <input type="text" v-model="phone" v-on:keyup="key()" />
       </div>
       <div class="clx yzm">
         <label>验证码：</label>
-        <input type="text" />
-        <span v-on:click="check()">获取验证码</span>
+        <input type="text" v-model="inyzm" />
+        <span v-on:click="check()" v-bind:class="{'disable': status == 0}" id="yBtn">获取验证码</span>
+        <span class="disable" id="sBtn"><span>{{times}}</span>秒重新发送</span>
       </div>
       <div class="clx">
         <label>密码：</label>
-        <input type="text" />
+        <input type="password" v-model="password"/>
       </div>
       <div class="clx">
         <label>确认密码：</label>
-        <input type="text" />
+        <input type="password" v-model="ypassword"/>
       </div>
       <div class="clx">
         <label>昵称：</label>
-        <input type="text" />
+        <input type="text" v-model="name" maxlength="14" />
       </div>
       <div class="clx">
         <label></label>
-        <div id="submit">注册</div>
+        <div id="submit" v-on:click="reg()">注册</div>
       </div>
     </div>
   </div>
@@ -38,35 +39,108 @@
 </template>
 <script>
 import commonsvc from '../../services/CommonSvc'
+import getDomain from '../../controllers/getDomain'
 
 export default{
   data () {
     return {
-      phone: ''
+      phone: '',
+      password: '',
+      ypassword: '',
+      name: '',
+      inyzm: '',
+      status: 0,
+      yzm: '',
+      times: 60
     }
   },
   ready: function () {
   },
   methods: {
     check () {
-      alert(this.phone)
-      let perUrl = 'https://api.netease.im/sms/sendcode.action'
-      let perData = {
-        'mobile': this.phone
-      }
-      $.ajax({
-        url: perUrl,
-        data: perData,
-        DataType: 'JSON',
-        type: 'POST',
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "AppKey": "9f641251a75044ec9dced1c81d26f097"
-        },
-        success:function(data){
-          console.log(data)
+      if(this.status == 1){
+        let perUrl = 'http://www.28dagang.com/api/sendSMS.php'
+        let perData = {
+          'mobile': this.phone
         }
-      })
+        let _this = this
+        $.ajax({
+          url: perUrl,
+          data: perData,
+          DataType: 'text',
+          type: 'POST',
+          success:function(data){
+            if(data){
+              _this.yzm = data
+            }
+          }
+        })
+        this.status = 0
+        this.time()
+      }
+    },
+    reg () {
+      if(this.inyzm == this.yzm){
+        if(this.phone == '' || this.password == '' || this.ypassword == '' || this.name == '' || this.inyzm == ''){
+          alert('请填写完整信息')
+        }else{
+          let p = /^1[3|4|5|7|8][0-9]{9}$/
+          if(p.test(this.phone)){
+            if(this.password == this.ypassword){
+              let _this = this
+              commonsvc.get({'mobile': this.phone}, 'http://www.28dagang.com/api/yzUserName.php').done(function(result){
+                if(result == 0){
+                  let perData = {
+                    'mobile': _this.phone,
+                    'username': _this.name,
+                    'password': _this.password
+                  }
+                  let perUrl = 'http://www.28dagang.com/api/regUser.php'
+                  commonsvc.post(perData, perUrl).done(function(result){
+                    if(result.status == 200){
+                      alert('恭喜您注册成功！')
+                      window.location.href = getDomain.getUrl('')
+                    }else{
+                      alert('注册失败，请稍后再试！')
+                    }
+                  })
+                }else{
+                  alert('此手机号已注册')
+                }
+              })
+            }else{
+              alert('两次密码不一样')
+            }
+          }else{
+            alert('请输入正确手机号')
+          }
+        }
+      }else{
+        alert('验证码不正确')
+      }
+    },
+    key () {
+      let i = /^1[3|4|5|7|8][0-9]{9}$/
+      if(i.test(this.phone)){
+        this.status = 1
+      }else{
+        this.status = 0
+      }
+    },
+    time () {
+      $('#yBtn').hide()
+      $('#sBtn').show()
+      let _this = this
+      let timer = setInterval(function() { 
+        _this.times = _this.times - 1
+        if(_this.times <= 0){
+          _this.status = 1
+          _this.times = 60
+          $('#yBtn').show()
+          $('#sBtn').hide()
+          clearInterval(timer)
+        }
+      },1000); 
     }
   }
 }
@@ -141,9 +215,15 @@ export default{
   line-height: 46px;
   margin: 12px 0 0 10px;
   color: #fff;
-  background: #9ec5e3;
+  background: #1199e3;
   text-align: center;
   cursor: pointer;
+}
+.formIn>div.yzm>span.disable{
+  background: #9ec5e3;
+}
+.formIn>div.yzm #sBtn{
+  display: none;
 }
 #submit{
   float: left;
