@@ -42,7 +42,7 @@
                   <span class="fuul">{{goods.goodsSelas}}</span>
              </div>
              <div class="fuwu">
-              <span class="label">浏览人数</span>
+              <span class="label">浏览次数</span>
                 <div class="fuul">{{goods.goodsSee}}</div>
              </div>
          </div>   
@@ -65,6 +65,7 @@ export default{
     }
   },
   ready: function () {
+    this.updateSee()
     this.getGoods()
   },
   methods: {
@@ -78,17 +79,25 @@ export default{
         },
         dataType:'JSON',
         type:'GET',
-        success:function(data){
-          
+        success:function(data){          
           _this.goods = data[0]
           console.log(_this.goods)
         }
       })
     },
     getInfo (ss) { 
-            window.location.href = getDomain.getUrl('second/' + ss)
-           
-         }
+        window.location.href = getDomain.getUrl('second/' + ss)
+    },
+    updateSee () {
+        $.ajax({
+            url:'http://www.28dagang.com/api/updateSee.php',
+            data:{
+                'id': this.$route.params.goodsID
+            },
+            dataType:'text',
+            type:'GET'
+        })
+    }
   },
 }
 </script>
