@@ -13,7 +13,11 @@
 
         <div class="biaotu">
            <div class="biaotu-left">
-             <img v-bind:src="goods.onebPic">
+             <img v-bind:src="goods.onebPic" v-bind:class="{'show': code == 0}">
+             <img v-bind:src="goods.twobPic">
+             <img v-bind:src="goods.threebPic">
+             <img v-bind:src="goods.fourbPic">
+             <img v-bind:src="goods.fivebPic">
            </div>
            <div class="biaotu-right">
              <ul class="biaoul">
@@ -61,7 +65,8 @@ export default{
   data () {
     return {
       goods: {
-      }
+      },
+      code: 0
     }
   },
   ready: function () {
@@ -336,5 +341,11 @@ export default{
      text-align: center;
      cursor:pointer;
      
+ }
+ .biaotu-left img{
+    display: none;
+ }
+ .show{
+    display: block !important;
  }
 </style>
