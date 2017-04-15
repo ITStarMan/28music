@@ -14,18 +14,18 @@
         <div class="biaotu">
            <div class="biaotu-left">
              <img v-bind:src="goods.onebPic" v-bind:class="{'show': code == 0}">
-             <img v-bind:src="goods.twobPic">
-             <img v-bind:src="goods.threebPic">
-             <img v-bind:src="goods.fourbPic">
-             <img v-bind:src="goods.fivebPic">
+             <img v-bind:src="goods.twobPic" v-bind:class="{'show': code == 1}">
+             <img v-bind:src="goods.threebPic" v-bind:class="{'show': code == 2}">
+             <img v-bind:src="goods.fourbPic" v-bind:class="{'show': code == 3}">
+             <img v-bind:src="goods.fivebPic" v-bind:class="{'show': code == 4}">
            </div>
            <div class="biaotu-right">
              <ul class="biaoul">
-               <a href="#"><li ><img v-bind:src="goods.onesPic"></li></a>
-               <a href="#"><li ><img v-bind:src="goods.twosPic"></li></a>
-               <a href="#"><li ><img v-bind:src="goods.threesPic"></li></a>
-               <a href="#"><li ><img v-bind:src="goods.foursPic"></li></a>
-               <a href="#"><li ><img v-bind:src="goods.fivesPic"></li></a>
+               <a href="#"><li v-on:mouseover="mouseOver(0)" v-bind:class="{'active': code == 0}"><img v-bind:src="goods.onesPic"></li></a>
+               <a href="#"><li v-on:mouseover="mouseOver(1)" v-bind:class="{'active': code == 1}"><img v-bind:src="goods.twosPic"></li></a>
+               <a href="#"><li v-on:mouseover="mouseOver(2)" v-bind:class="{'active': code == 2}"><img v-bind:src="goods.threesPic"></li></a>
+               <a href="#"><li v-on:mouseover="mouseOver(3)" v-bind:class="{'active': code == 3}"><img v-bind:src="goods.foursPic"></li></a>
+               <a href="#"><li v-on:mouseover="mouseOver(4)" v-bind:class="{'active': code == 4}"><img v-bind:src="goods.fivesPic"></li></a>
              </ul>
            </div>
         </div>
@@ -74,6 +74,9 @@ export default{
     this.getGoods()
   },
   methods: {
+    mouseOver (index) {
+        this.code = index
+    },
     getGoods () {
       $('body').animate( {scrollTop: 0}, 100)
       let _this = this
@@ -155,7 +158,7 @@ export default{
       margin-bottom: 10px;
       border: 1px solid #e8e8e8;
  }
- .biaotu-right .biaoul li:hover{
+ .biaotu-right .biaoul li.active{
      border: 3px solid #b4a078;
  }
  .biaowen{
